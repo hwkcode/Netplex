@@ -5,6 +5,7 @@ class User < ApplicationRecord
     validates :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+    # https://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
     validates :password, length: { minimum: 6 }, allow_nil: true
     
     after_initialize :ensure_session_token
