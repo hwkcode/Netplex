@@ -6,6 +6,12 @@
 
 # Ignore bundler config.
 /.bundle
+bundle.js
+bundle.js.map
+node_modules/
+.byebug_history
+.DS_Store
+npm-debug.log
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -17,11 +23,19 @@
 /storage/*
 !/storage/.keep
 
+# Ignore node_modules
 /node_modules
+
+# Ignore yarn files
 /yarn-error.log
 
+# Ignore precompiled javascript packs
 /public/assets
+
+# Ignore Byebug command history file.
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/initializers/secret_token.rb
+
