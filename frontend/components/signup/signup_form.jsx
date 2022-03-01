@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -36,28 +37,32 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-page">
-                <div className="signup-container">
-                    <div className="step-indicator">Step <strong>2</strong> of 2</div>                                         
-                    <div className="step-message">Create a password to start your membership</div>   
-                    <br />                        
-                    <div className="step-message">Just a few more steps and you're done! We hate paperwork, too.</div>       
-                    <form onSubmit={this.handleSubmit} className="signup-form">
-                        <input type="email"
-                            value={this.state.email}
-                            placeholder="Email address"
-                            onChange={this.update('email')}
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            placeholder="Password"
-                            onChange={this.update('password')}
-                        />
-                        {this.renderErrors()}
-                        <br />
-                        <button type="submit">Sign up</button>
-                    </form>
+            <div className="signup-form-page">
+                <div className="signup-form-container">
+                    <div className="signup-form-message-container">
+                        <div className="signup-form-step-container"> 
+                            <form onSubmit={this.handleSubmit} className="signup-form">
+                                <div className="step-form-indicator">Step <strong>2</strong> of 2</div>                                         
+                                <div className="step-form-title">Create a password to start your membership</div>                     
+                                <div className="step-form-message">Just a few more steps and you're done!</div>    
+                                <div className="step-form-message"> We hate paperwork, too.</div>       
+                                <input type="email"
+                                    value={this.state.email}
+                                    placeholder="Email address"
+                                    onChange={this.update('email')}
+                                    className="input-signup-form"
+                                />
+                                <input type="password"
+                                    value={this.state.password}
+                                    placeholder="Add a password"
+                                    onChange={this.update('password')}
+                                    className="input-signup-form"
+                                />
+                                {this.renderErrors()}
+                                <Link to='/browse' type="submit" className="btn submit">Submit</Link>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

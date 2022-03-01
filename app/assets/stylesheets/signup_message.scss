@@ -1,0 +1,67 @@
+.signup-page {
+    background-color: white;
+    text-align: center;
+
+    .signup-container {
+        background-color: white;
+        padding-bottom: 75px;
+        width: 100%;
+        display: block;
+    }
+
+    .signup-message-container {
+        margin: 0 auto 15px;
+        padding: 20px 32px 5px 32px;
+        color: black;
+        display: block;
+        max-width: 978px;
+    }
+
+    .signup-step-container {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .step-logo-container {
+        display: inline-block;
+    }
+
+    .step-logo {
+        margin: 100px 0 0;
+        width: 200px;
+        height: 70px;
+        background: image_url("devices.png") no-repeat;
+        background-size: 200px;
+        // display: block;
+    }
+
+    .step-indicator {
+        display: block;
+        line-height: 19px;
+        font-size: 9px;
+        text-transform: uppercase;
+        padding: 0 0 5px;
+    }
+
+    .step-title {
+        display: inline-block;
+        font-size: 21px;
+        font-weight: 550;
+        margin: 0 0 0.4em;
+        line-height: 1.25em;
+    }
+
+    .step-message {
+        display: inline-block;
+        font-size: 14px;
+        max-width: 220px;
+        line-height: 1.25em;
+    }
+
+    .continue {
+        width: 225px;
+        padding: 0.8rem 1.3rem;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+}

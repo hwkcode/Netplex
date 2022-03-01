@@ -37,28 +37,38 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div className="login-page">
-                <div>Sign In</div>                                         
-                <form onSubmit={this.handleSubmit} className="signup-form">
-                    <input type="email"
-                        value={this.state.email}
-                        placeholder="Email address"
-                        onChange={this.update('username')}
-                        className="login-input"
-                    />
-                    <br />
-                    <input type="password"
-                        value={this.state.password}
-                        placeholder="Password"
-                        onChange={this.update('password')}
-                        className="login-input"
-                    />
-                    <br />
-                    <button type="submit" className="btn">Sign In</button>
-                    <div>New to Netplex? 
-                        <Link to="/signup"> Sign up now</Link>
+            <div className="login-form-page">
+                <div className="login-background">
+                    <div className="login-background__gradient">
+                        <div className="login-form-container">
+                            <div className="login-form-input-container"> 
+                                <div className="login-form-main-container"> 
+                                    <form onSubmit={this.handleSubmit} className="login-form">
+                                        <div className="login-form-title">Sign In</div>                                         
+                                        <input type="email"
+                                            value={this.state.email}
+                                            placeholder="Email address"
+                                            onChange={this.update('email')}
+                                            className="input-login-form"
+                                        />
+                                        <br />
+                                        <input type="password"
+                                            value={this.state.password}
+                                            placeholder="Password"
+                                            onChange={this.update('password')}
+                                            className="input-login-form"
+                                        />
+                                        <br />
+                                        <button type="submit" className="btn">Sign In</button>
+                                    <div>New to Netplex? 
+                                        <Link to="/signup"> Sign up now</Link>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }

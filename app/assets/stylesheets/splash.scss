@@ -1,60 +1,206 @@
 .splash-page {
+    background-color: black;
+    width: 100%;
+    overflow: hidden;
 
-    .sign-in {
-        // position: relative;
-        top: 5%;
-        right: 0;
-        // transform: translate(-50%, -50%);
-        // z-index: 1;
+    .netplex-logo {
+        background: image_url("netplex_logo.png");
+        object-fit: contain;
+        padding-left: 20px;
+        z-index: 3;
+        position: fixed;
+        left: 0;
+        width: 150px;
     }
 
-    .welcome {
-        position: relative;
-        color: white;
-        padding: 75px 0;
-        // max-width: 950px;
-        text-align: center;
-        z-index: 2;
-    }
+    .story-cards{
+        margin: 0 auto;
+        // display: block;
+    
+        .story-card-a{
+            // display: flex;
+            position: relative;
+            border-bottom: 8px solid #222;
+            padding: 80px 40px;
+            color: white;
+            margin-bottom: 0;
+            background: 0 0;
 
-    .splash-background {
-        width: 100%;
-        height: 93vh;
-        position: relative;
-        background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
-        // background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
-    }
-    .section {
-        background-color: black;
-        color: white;
-        border-top: 8px solid #222;
-        padding: 70px 45px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-    }
+            .story-card-a__background {
+                position: absolute;
+                top: -80px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 93vh;
+                width: 100%;
+                z-index: 0;
+                background: image_url("netflix_background.jpg") no-repeat center center/cover;
 
-    .section-title {
-        font-size: 50px;
+                .card-image__gradient {
+                    width: 100%;
+                    height: 90vh;
+                    background: rgba(0,0,0,0.6);
+                    z-index: 1;
+                }
+            }
 
-        @media screen and (max-width: 600px) {
-            font-size: 35px;
+            .story-card-a__text {
+                position: relative;
+                width: 100%;
+                padding: 75px 0;
+                margin: 0 auto;
+                text-align: center;
+                z-index: 1;
+
+                .card-title {
+                    font-size: 50px;
+                    margin: 0 auto;
+                    max-width: 640px;
+                    font-weight: bold;
+                    line-height: 1.25em;
+                }    
+    
+                .card-subtitle {
+                    font-size: 22px;
+                    max-width: 640px;
+                    margin: 0 auto;
+                    line-height: 2em;
+                }   
+    
+                .card-form-title {
+                    font-size: 15px;
+                    margin: 0 auto;
+                    max-width: 640px;
+                    line-height: 3em;
+
+                    .card-form {
+                        margin-top: 10px;
+
+                        .card-input-email {
+                            position: relative;
+                            margin: 10px auto;
+                            max-width: 500px;
+                         }
+                    }
+
+                }   
+
+            }
+        }
+
+        .story-card-b {
+            position: relative;
+            // display: block;
+            border-bottom: 8px solid #222;
+            padding: 40px 40px;
+            color: white;
+            margin-bottom: 0;
+            background: 0 0;
+            background-color: black;
+            text-align: left;
+
+            .story-card-b-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0 auto;
+
+                .story-card-b__text {
+                    width: 60%;
+                    height: 100%;
+                    // flex: initial;
+                    padding: 0 4rem 0 0;
+
+                    .card-title {
+                        font-size: 50px;
+                        margin: 0 auto;
+                        max-width: 600px;
+                        font-weight: bold;
+                        line-height: 1.25em;
+                    }    
+
+                    .card-subtitle {
+                        font-size: 22px;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        line-height: 1.5em;
+                    }   
+                }
+
+                .story-card-b__image {
+                    width: 40%;
+                    height: 100%;
+                    flex: initial;
+
+                    .tv {
+                        width: auto;
+                        height: 250px;
+                    }
+                }
+            }
+               
         }
     }
-
-    .section-subtitle {
-        font-size: 26px;
-
-        @media screen and (max-width: 600px) {
-            font-size: 18px;
-        }
-    }
-
-    .section-form-title {
-        font-size: 19px;
-    }
-
-
 }
+
+
+
+//     .sign-in {
+//         // position: relative;
+//         top: 5%;
+//         right: 0;
+//         // transform: translate(-50%, -50%);
+//         // z-index: 1;
+//     }
+
+//     .welcome {
+//         position: relative;
+//         color: white;
+//         padding: 75px 0;
+//         // max-width: 950px;
+//         text-align: center;
+//         z-index: 2;
+//     }
+
+//     .splash-background {
+//         width: 100%;
+//         height: 93vh;
+//         position: relative;
+//         background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
+//         // background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
+//     }
+//     .section {
+//         background-color: black;
+//         color: white;
+//         border-top: 8px solid #222;
+//         padding: 70px 45px;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+//         align-items: center;
+//         text-align: left;
+//     }
+
+//     .section-title {
+//         font-size: 50px;
+
+//         @media screen and (max-width: 600px) {
+//             font-size: 35px;
+//         }
+//     }
+
+//     .section-subtitle {
+//         font-size: 26px;
+
+//         @media screen and (max-width: 600px) {
+//             font-size: 18px;
+//         }
+//     }
+
+//     .section-form-title {
+//         font-size: 19px;
+//     }
+
+
+// }
