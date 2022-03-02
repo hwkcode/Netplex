@@ -1,53 +1,59 @@
 .signup-form-page {
     background-color: white;
-    text-align: left;
     font-family: sans-serif;
+    text-align: left;
 
-    .signup-form-container {
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #e6e6e6;
+        
+        .netplex-logo {
+            width: 160px;
+            margin: 16px 34px;
+        }
+
+        .link {
+            font-size: 1.1rem;  
+            color: black;
+            margin: 33px 52px;
+            font-weight: bold;
+        }
+    }
+
+    .signup-form {
         background-color: white;
         padding-bottom: 75px;
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        max-width: 420px;
+        margin: 35px auto;
     }
 
-    .signup-form-message-container {
-        margin: 0 auto 15px;
-        padding: 20px 32px 5px 32px;
-        color: black;
-        display: block;
-        // max-width: 978px;
-    }
-
-    .signup-form-step-container {
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .step-form-indicator {
-        display: block;
+    .status {
         line-height: 19px;
-        font-size: 9px;
+        font-size: 12px;
         text-transform: uppercase;
     }
 
-    .step-form-title {
-        display: inline-block;
-        font-size: 21px;
+    .title {
+        font-size: 28px;
         font-weight: 550;
-        margin: 0 0 0.1em;
-        line-height: 1.25em;
+        margin: 0.05rem 0 0.5rem;
+        line-height: 2.25rem;
     }
 
-    .step-form-message {
-        display: inline-block;
-        font-size: 14px;
-        max-width: 280px;
-        line-height: 1.8em;
+    .message {
+        font-size: 16px;
+        max-width: 260px;
+        line-height: 1.85em;
     }
 
     .input-signup-form {
-        height: 40px;
-        width: 280px;
+        height: 55px;
+        width: 400px;
         font-size: 11px;
         border: solid 1px #8c8c8c;
         margin-top: 5px;
@@ -58,10 +64,72 @@
         // line-height: 2;
     }
     .submit {
-        margin-top: 15px;
-        width: 280px;
-        padding: 0.8rem 1.3rem;
-        font-weight: bold;
+        margin-top: 22px;
+        width: 400px;
+        padding: 1rem 1.3rem;
         border-radius: 4px;
+        font-size: 1.25rem;
     }
 }
+
+// .signup-form-container {
+//         background-color: white;
+//         padding-bottom: 75px;
+//         width: 100%;
+//         display: block;
+//     }
+
+//     .signup-form-message-container {
+//         margin: 0 auto 15px;
+//         padding: 20px 32px 5px 32px;
+//         color: black;
+//         display: block;
+//         // max-width: 978px;
+//     }
+
+//     .signup-form-step-container {
+//         max-width: 280px;
+//         margin: 0 auto;
+//     }
+
+//     .step-form-indicator {
+//         display: block;
+//         line-height: 19px;
+//         font-size: 9px;
+//         text-transform: uppercase;
+//     }
+
+//     .step-form-title {
+//         display: inline-block;
+//         font-size: 21px;
+//         font-weight: 550;
+//         margin: 0 0 0.1em;
+//         line-height: 1.25em;
+//     }
+
+//     .step-form-message {
+//         display: inline-block;
+//         font-size: 14px;
+//         max-width: 280px;
+//         line-height: 1.8em;
+//     }
+
+//     .input-signup-form {
+//         height: 40px;
+//         width: 280px;
+//         font-size: 11px;
+//         border: solid 1px #8c8c8c;
+//         margin-top: 5px;
+//     }
+
+//     input::-webkit-input-placeholder {
+//         font-size: 11px;
+//         // line-height: 2;
+//     }
+//     .submit {
+//         margin-top: 15px;
+//         width: 280px;
+//         padding: 0.8rem 1.3rem;
+//         font-weight: bold;
+//         border-radius: 4px;
+//     }

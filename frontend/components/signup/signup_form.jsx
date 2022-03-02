@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import NetplexLogo from '../../../app/assets/images/netplex_logo.png';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -37,33 +38,31 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-page">
-                <div className="signup-form-container">
-                    <div className="signup-form-message-container">
-                        <div className="signup-form-step-container"> 
-                            <form onSubmit={this.handleSubmit} className="signup-form">
-                                <div className="step-form-indicator">Step <strong>2</strong> of 2</div>                                         
-                                <div className="step-form-title">Create a password to start your membership</div>                     
-                                <div className="step-form-message">Just a few more steps and you're done!</div>    
-                                <div className="step-form-message"> We hate paperwork, too.</div>       
-                                <input type="email"
-                                    value={this.state.email}
-                                    placeholder="Email address"
-                                    onChange={this.update('email')}
-                                    className="input-signup-form"
-                                />
-                                <input type="password"
-                                    value={this.state.password}
-                                    placeholder="Add a password"
-                                    onChange={this.update('password')}
-                                    className="input-signup-form"
-                                />
-                                {this.renderErrors()}
-                                <button type="submit" className="button submit">Submit</button>
-                            </form>
-                        </div>
-                    </div>
+            <div className="signup-form-page"> 
+                <div className="nav-bar">
+                    <img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" />
+                    <Link to="/login" className="link">Sign In</Link>
                 </div>
+                <form onSubmit={this.handleSubmit} className="signup-form">
+                    <div className="status">Step <strong>2</strong> of <strong>2</strong></div>                                         
+                    <div className="title">Create a password to start your membership</div>                     
+                    <div className="message">You're almost done!</div>    
+                    <div className="message">We hate paperwork, too.</div>       
+                    <input type="email"
+                        value={this.state.email}
+                        placeholder="Email address"
+                        onChange={this.update('email')}
+                        className="input-signup-form"
+                    />
+                    <input type="password"
+                        value={this.state.password}
+                        placeholder="Add a password"
+                        onChange={this.update('password')}
+                        className="input-signup-form"
+                    />
+                    {this.renderErrors()}
+                    <button type="submit" className="button submit">Submit</button>
+                </form>
             </div>
         );
     }
