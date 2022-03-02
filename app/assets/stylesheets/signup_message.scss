@@ -3,66 +3,85 @@
     text-align: center;
     font-family: sans-serif;
 
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid #e6e6e6;
+        
+        .netplex-logo {
+            // position: absolute;
+            // left: 0;
+            // object-fit: contain;
+            // margin-top: 20px;
+            // margin-left: 45px;
+            width: 160px;
+            margin: 16px 34px;
+            // z-index: 1;
+            // -webkit-filter: drop-shadow(0.01px 0.01px 0 black)
+            //                 drop-shadow(-0.01px -0.01px 0 black);
+            // filter: drop-shadow(0.01px 0.01px 0 black) 
+            //         drop-shadow(-0.01px -0.01px 0 black);
+        }
+
+        .link {
+            // position: absolute;
+            // right: 0;
+            // margin-right: 50px;
+            // margin-top: 26px;
+            // z-index: 1;
+            font-size: 1.1rem;  
+            color: black;
+            margin: 33px 52px;
+            font-weight: bold;
+        }
+
+    }
+    
     .signup-container {
         background-color: white;
         padding-bottom: 75px;
         width: 100%;
-        display: block;
-    }
-
-    .signup-message-container {
-        margin: 0 auto 15px;
-        padding: 20px 32px 5px 32px;
-        color: black;
-        display: block;
-        max-width: 978px;
-    }
-
-    .signup-step-container {
-        max-width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 325px;
         margin: 0 auto;
     }
 
-    .step-logo-container {
-        display: inline-block;
-    }
-
-    .step-logo {
-        margin: 100px 0 0;
-        width: 200px;
-        height: 70px;
+    .devicesImage {
+        margin: 125px 0 5px;
+        width: 250px;
+        height: 80px;
         background: image_url("devices.png") no-repeat;
-        background-size: 200px;
-        // display: block;
+        background-size: 250px;
     }
 
-    .step-indicator {
-        display: block;
+    .status {
         line-height: 19px;
-        font-size: 9px;
+        font-size: 12px;
         text-transform: uppercase;
-        padding: 0 0 5px;
     }
 
-    .step-title {
-        display: inline-block;
-        font-size: 21px;
+    .title {
+        font-size: 28px;
         font-weight: 550;
-        margin: 0 0 0.4em;
-        line-height: 1.25em;
+        margin: 0.05rem 0 0;
+        line-height: 2.25rem;
     }
 
-    .step-message {
-        display: inline-block;
-        font-size: 14px;
-        max-width: 220px;
+    .message {
+        font-size: 16px;
+        max-width: 260px;
         line-height: 1.25em;
     }
 
     .continue {
-        width: 225px;
-        padding: 0.8rem 1.3rem;
-        font-weight: bold;
+        width: 310px;
+        padding: 1.25rem 1.3rem;
+        // font-weight: bold;
         border-radius: 4px;
+        margin-top: 20px;
+        font-size: 1.25rem;
     }
 }
