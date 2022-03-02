@@ -2,7 +2,7 @@
     --primary-color: #e50914;
 }
 
-input:focus,
+// input:focus,
 // select:focus,
 // textarea:focus,
 // button:focus {
@@ -17,8 +17,9 @@ input {
     // font-size: 1rem;
     width: 14.5rem;
     height: 40px;
-    text-indent: 10px;
+    text-indent: 0.5rem;
     border-radius: 4px;
+    outline: none;
 }
 
 video {
@@ -26,8 +27,10 @@ video {
 }
 
 input::placeholder {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
+
+input::focus
 
 body {
     // font-family: ''Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;'
@@ -36,6 +39,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     direction: ltr;
+    // display: grid;
     // background: black;
 }
 
@@ -56,7 +60,7 @@ p {
     margin: 0.5rem 0;
 }
 
-.btn {
+.button {
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
@@ -80,10 +84,11 @@ p {
 }
 
 .btn-xl {
-    font-size: 1rem;
-    min-height: 40px;
-    padding: 0.7rem 2rem;
-    text-transform: uppercase;
+    font-size: 1.75rem;
+    min-height: 3rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    line-height: 1.75rem;
 }
 
 .btn-large {
