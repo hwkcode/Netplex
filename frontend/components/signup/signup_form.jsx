@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
                                     className="input-signup-form"
                                 />
                                 {this.renderErrors()}
-                                <Link to='/browse' type="submit" className="btn submit">Submit</Link>
+                                <button type="submit" className="button submit">Submit</button>
                             </form>
                         </div>
                     </div>

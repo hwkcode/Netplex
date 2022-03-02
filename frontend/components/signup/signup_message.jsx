@@ -25,7 +25,7 @@ class SignupMessage extends React.Component {
                             <div className="step-message">Netflix is personalized for you. Create a password to watch on any device at any time.</div> {/*font 18*/}
                         </div>
                     </div>
-                    <Link to={`/signup?email=${this.state.email}`} type="submit" className="btn continue">Continue</Link>
+                    <Link to={`/signup?email=${this.state.email}`} type="submit" className="button continue">Continue</Link>
                 </div>
             </div>
         )
