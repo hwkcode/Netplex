@@ -15,7 +15,7 @@ class SignupMessage extends React.Component {
         return(
             <div className="signup-page">
                 <div className="nav-bar">
-                    <img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" />
+                    <Link to="/"><img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" /></Link>
                     <Link to="/login" className="link">Sign In</Link>
                 </div>
                 <div className="signup-container">

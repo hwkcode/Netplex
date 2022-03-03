@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NetplexLogo from '../../../app/assets/images/netplex_logo.png';
+import BackgroundImage from '../../../app/assets/images/netflix_background.jpg';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -17,6 +20,10 @@ class LoginForm extends React.Component {
         });
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+    
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -38,36 +45,35 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-form-page">
-                <div className="login-background">
-                    <div className="login-background__gradient">
-                        <div className="login-form-container">
-                            <div className="login-form-input-container"> 
-                                <div className="login-form-main-container"> 
-                                    <form onSubmit={this.handleSubmit} className="login-form">
-                                        <div className="login-form-title">Sign In</div>                                         
-                                        <input type="email"
-                                            value={this.state.email}
-                                            placeholder="Email address"
-                                            onChange={this.update('email')}
-                                            className="input-login-form"
-                                        />
-                                        <br />
-                                        <input type="password"
-                                            value={this.state.password}
-                                            placeholder="Password"
-                                            onChange={this.update('password')}
-                                            className="input-login-form"
-                                        />
-                                        <br />
-                                        <button type="submit" className="btn">Sign In</button>
-                                    <div>New to Netplex? 
-                                        <Link to="/signup"> Sign up now</Link>
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
+                <Link to="/"><img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" /></Link>
+                <img src={BackgroundImage} alt="Netflix movie tiles" className="background-image" />
+                <div className="login-form-container"> 
+                    <form onSubmit={this.handleSubmit} className="login-form">
+                        <div className="login-form-title">Sign In</div>
+                        <div className="login-inputs">                                       
+                            <input type="email"
+                                value={this.state.email}
+                                placeholder=" "
+                                onChange={this.update('email')}
+                                className="login-input"
+                            />
+                            <label>Email address</label>
                         </div>
-                    </div>
+                        <div className="login-inputs">  
+                            <input type="password"
+                                value={this.state.password}
+                                placeholder=" "
+                                onChange={this.update('password')}
+                                className="login-input"
+                            />
+                            <label>Password</label>
+                        </div>
+                        {this.renderErrors()}
+                        <button type="submit" className="button submit">Sign In</button>
+                        <div className="login-question">New to Netplex? 
+                            <Link to="/"> Sign up now</Link>
+                        </div>
+                    </form>
                 </div>
             </div>
         );

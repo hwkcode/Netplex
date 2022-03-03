@@ -14,11 +14,11 @@
 }
 
 input {
-    // font-size: 1rem;
+    font-size: 1.25rem;
     width: 14.5rem;
     height: 40px;
     text-indent: 0.5rem;
-    border-radius: 4px;
+    border-radius: 2px;
     outline: none;
 }
 
@@ -30,7 +30,7 @@ input::placeholder {
     font-size: 0.9rem;
 }
 
-input::focus
+// input::focus
 
 body {
     // font-family: ''Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;'
@@ -61,7 +61,7 @@ p {
 }
 
 .button {
-    display: inline-block;
+    // display: inline-block;
     background: var(--primary-color);
     color: #fff;
     border-radius: 2px;
@@ -84,11 +84,10 @@ p {
 }
 
 .btn-xl {
-    font-size: 1.75rem;
-    min-height: 3rem;
-    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    height: 4rem;
+    padding: 1.05rem 2rem;
     text-align: center;
-    line-height: 1.75rem;
 }
 
 .btn-large {

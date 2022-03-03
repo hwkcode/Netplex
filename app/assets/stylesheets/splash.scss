@@ -2,7 +2,7 @@
     font-family: sans-serif;
     color: white;
     background-color: #222 ;
-    position: relative;
+    height: 100vh;
     
     .netplex-logo {
         position: absolute;
@@ -28,7 +28,7 @@
         font-size: 0.9rem;
     }
 
-     .demo {
+    .demo {
         position: absolute;
         right: 6rem;
         margin-right: 50px;
@@ -83,11 +83,35 @@
     .tile-form {
         display: flex;
         justify-content: center;
+        // position: relative;
     }
 
-    .tile-input-email {
-        width: 27rem;
-        height: 4.1rem;
+    .tile-input {
+        position: relative;
+    }
+
+    .input-email {
+        width: 28.5rem;
+        height: 4rem;
+    }
+
+    .input-email:focus + label, .input-email:not(:placeholder-shown) + label {
+        transform: translateY(-1rem) scale(0.65);
+        font-weight: bold;
+    }
+
+    .input-email::placeholder {
+        color: transparent;
+    }
+
+    label {
+        position: absolute;
+        left: 0.8rem;
+        top: 1.5rem;
+        color: gray;
+        font-size: 1rem;
+        transform-origin: 0 0;
+        transition: transform 0.2s ease-in;
     }
 
     .panel {
@@ -138,320 +162,59 @@
         line-height: 2rem;
     } 
 
-    .faq {
+    .faqs {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        margin: 0 auto 10px;
-        padding: 80px 80px;
-        background-color: black;
+        width: 100%;
+        margin: 0 auto;
         text-align: left;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+
+    .accordion {
+        width: 54%;
+    }
+
+    .faq {
+        background: #303030;
+        color: white;
+        background-color: #303030;
+        padding: 20px 28px;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .faq-title {
-        font-size: 2.5rem;
+        margin-top: 4rem;
+        font-size: 2.85rem;
         font-weight: bold;
         text-align: center;
         padding: 0 0 50px;
     }
 
-    .accordion {
-        color: white;
-        background-color: #303030;
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         cursor: pointer;
-        padding: 40px;
-        width: 70%;
-        margin: 0 auto;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 1.5rem;
-        transition: 0.4s;
-        line-height: 1rem;
-    }
-
-    .active, .accordion:hover {
-        background-color: #ccc;
+        // height: 0.01rem;
     }
 
     .faq-answer {
-        padding: 0 20px;
-        background-color: #303030;
-        max-height: 0;
+        height: 0;
         overflow: hidden;
-        transition: max-height 0.2s ease-out;
+        
+        // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 
-    .accordion:after {
-        content: '\FF0B'; 
-        font-size: 3rem;
-        color: white;
-        float: right;
-        margin-left: 5px;
-    }
-
-    .active:after {
-        content: "\2715"; 
+    .faq-answer.show {
+        margin-top: 1.5rem;
+        line-height: 1.75rem;
+        height: fit-content;
+        // border-top: 10px solid black;
+        // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 }
     
-//     .netplex-logo {
-//         background: image_url("netplex_logo.png");
-//         object-fit: contain;
-//         padding-left: 20px;
-//         z-index: 3;
-//         position: fixed;
-//         left: 0;
-//         width: 150px;
-//     }
-
-//     .story-cards{
-//         margin: 0 auto;
-//         // display: block;
-    
-//         .story-card-a{
-//             // display: flex;
-//             position: relative;
-//             border-bottom: 8px solid #222;
-//             padding: 80px 40px;
-//             color: white;
-//             margin-bottom: 0;
-//             background: 0 0;
-
-//             .story-card-a__background {
-//                 position: absolute;
-//                 top: -80px;
-//                 left: 0;
-//                 right: 0;
-//                 bottom: 0;
-//                 height: 93vh;
-//                 width: 100%;
-//                 z-index: 0;
-//                 background: image_url("netflix_background.jpg") no-repeat center center/cover;
-
-//                 .card-image__gradient {
-//                     width: 100%;
-//                     height: 90vh;
-//                     background: rgba(0,0,0,0.6);
-//                     z-index: 1;
-//                 }
-//             }
-
-//             .story-card-a__text {
-//                 position: relative;
-//                 width: 100%;
-//                 padding: 75px 0;
-//                 margin: 0 auto;
-//                 text-align: center;
-//                 z-index: 1;
-
-//                 .card-title {
-//                     font-size: 50px;
-//                     margin: 0 auto;
-//                     max-width: 640px;
-//                     font-weight: bold;
-//                     line-height: 1.25em;
-//                 }    
-    
-//                 .card-subtitle {
-//                     font-size: 22px;
-//                     max-width: 640px;
-//                     margin: 0 auto;
-//                     line-height: 2em;
-//                 }   
-    
-//                 .card-form-title {
-//                     font-size: 15px;
-//                     margin: 0 auto;
-//                     max-width: 640px;
-//                     line-height: 3em;
-
-//                     .card-form {
-//                         margin-top: 10px;
-
-//                         .card-input-email {
-//                             position: relative;
-//                             margin: 10px auto;
-//                             max-width: 500px;
-//                          }
-//                     }
-
-//                 }   
-
-//             }
-//         }
-
-//         .story-card-b {
-//             position: relative;
-//             // display: block;
-//             border-bottom: 8px solid #222;
-//             padding: 40px 40px;
-//             color: white;
-//             margin-bottom: 0;
-//             background: 0 0;
-//             background-color: black;
-//             text-align: left;
-
-//             .story-card-b-container {
-//                 display: flex;
-//                 align-items: center;
-//                 justify-content: space-between;
-//                 margin: 0 auto;
-
-//                 .story-card-b__text {
-//                     width: 60%;
-//                     height: 100%;
-//                     // flex: initial;
-//                     padding: 0 4rem 0 0;
-
-//                     .card-title {
-//                         font-size: 50px;
-//                         margin: 0 auto;
-//                         max-width: 600px;
-//                         font-weight: bold;
-//                         line-height: 1.25em;
-//                     }    
-
-//                     .card-subtitle {
-//                         font-size: 22px;
-//                         max-width: 600px;
-//                         margin: 0 auto;
-//                         line-height: 1.5em;
-//                     }   
-//                 }
-
-//                 .story-card-b__image {
-//                     width: 40%;
-//                     height: 100%;
-//                     flex: initial;
-
-//                     .tv {
-//                         width: auto;
-//                         height: 250px;
-//                     }
-//                 }
-//             }
-               
-//         }
-//     }
-
-
-
-
-//     .sign-in {
-//         // position: relative;
-//         top: 5%;
-//         right: 0;
-//         // transform: translate(-50%, -50%);
-//         // z-index: 1;
-//     }
-
-//     .welcome {
-//         position: relative;
-//         color: white;
-//         padding: 75px 0;
-//         // max-width: 950px;
-//         text-align: center;
-//         z-index: 2;
-//     }
-
-//     .splash-background {
-//         width: 100%;
-//         height: 93vh;
-//         position: relative;
-//         background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;
-//         // background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
-//     }
-//     .section {
-//         background-color: black;
-//         color: white;
-//         border-top: 8px solid #222;
-//         padding: 70px 45px;
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: center;
-//         align-items: center;
-//         text-align: left;
-//     }
-
-//     .section-title {
-//         font-size: 50px;
-
-//         @media screen and (max-width: 600px) {
-//             font-size: 35px;
-//         }
-//     }
-
-//     .section-subtitle {
-//         font-size: 26px;
-
-//         @media screen and (max-width: 600px) {
-//             font-size: 18px;
-//         }
-//     }
-
-//     .section-form-title {
-//         font-size: 19px;
-//     }
-
-
-// }
-
-
-// display: grid;
-    
-//     width: 100wh;
-//     height: 100vh;
-
-//     grid-template-columns: repeat(4, 1fr);
-//     grid-template-rows: repeat(16, 20%);
-//     grid-template-areas: "overlap";
-//     gap: 1rem;
-    
-//     background-color: black;
-//     color: white;   
-// }    
-
-// .panel-a {
-//     grid-row: 1/4;
-//     grid-column: 1/-1;
-//     display: grid;
-//     grid-template-columns: subgrid;
-
-//     .netplex-logo {
-//         background: image_url("netplex_logo.png");
-//         grid-row: 1/1;
-//         grid-column: 1/1;
-//     }
-
-//     .panel-a__background-image {
-//         object-fit: cover;
-//         width: 100%;
-//         max-height: 100%;
-//         grid-row: 1/4;
-//         grid-column: 1/-1;
-//         filter: brightness(40%);
-//         grid-area: overlap;
-//         z-index: 0
-//     }
-
-//     .panel-a__text {
-//         grid-row: 2/4;
-//         grid-column: 2/4;
-//         z-index: 2;
-
-//         .panel-a__title {
-//             grid-row: 2/4;
-//             grid-column: 2/4;
-//             grid-area: overlap;
-//             z-index: 2;
-//         }
-//     }
-// }
-
-
-// .panel-b {
-//     grid-row: 5/7;
-//     grid-column: 1/-1;
-//     background-color: black;
-// }

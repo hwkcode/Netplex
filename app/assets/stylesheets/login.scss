@@ -1,83 +1,184 @@
 .login-form-page {
     color: white;
     text-align: left;
-    display: block;
+    position: relative;
     font-family: sans-serif;
 
-    .login-background{
-        background: image_url("netflix_background.jpg") no-repeat center center/cover;
+    .netplex-logo {
+        position: absolute;
+        left: 0;
+        object-fit: contain;
+        margin-top: 15px;
+        margin-left: 35px;
+        width: 160px;
+        z-index: 1;
+        -webkit-filter: drop-shadow(1px 1px 0 black)
+                        drop-shadow(-1px -1px 0 black);
+        filter: drop-shadow(1px 1px 0 black) 
+                drop-shadow(-1px -1px 0 black);
+    }
+
+    .background-image{
+        position: absolute;
+        width: 100vw;
         height: 100vh;
+        filter: brightness(35%);
         z-index: 0;
-
-        .login-background__gradient {
-            position: relative;
-            height: 100vh;
-            background: rgba(0,0,0,0.6);
-            z-index: 1;
-        }
-
     }
     
     .login-form-container {
-        position: relative;
-        height: 100vh;
-        color: black;
-        margin: 0 auto -236px;
-        padding: 0 5%;
-        max-width: 550px;
-        z-index: 2;
-        border-radius: 4px;
-        // background-color: transparent;
-    }
-
-    .login-form-input-container {
-        // position: relative;
-        // z-index: 2;
-        min-height: 500px;
-        padding: 60px 68px 40px;
-        // margin-top: 90px;
-        margin-bottom: 90px;
+        position: absolute;
         background-color: rgba(0, 0, 0, 0.75);
+        margin: 22px auto;
+        padding: 55px 60px;
+        height: 600px;
+        width: 410px;
+        z-index: 1;
         border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .login-form {
-        width: 100%;
+        top: calc(50vh - (600px / 2));
+        left: calc(50vw - (425px / 2)); 
     }
 
     .login-form-title {
-        display: inline-block;
-        font-size: 21px;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.8rem;
         font-weight: 550;
-        margin: 0 0 1em;
-        line-height: 1.25em;
+        margin: 0.45rem 0 1.9rem;
+        line-height: 1.25rem;
         color: white;
     }
 
-    .input-login-form {
-        height: 40px;
+    .login-inputs {
+        position: relative;
+        outline: none;
+    }
+
+    .login-input:focus + label, .login-input:not(:placeholder-shown) + label {
+        transform: translate(0.25rem, -0.8rem) scale(0.65);
+        font-weight: bold;
+    }
+
+    .login-input::placeholder {
+        color: transparent;
+    }
+
+    label {
+        position: absolute;
+        left: 0.8rem;
+        top: 1rem;
+        color: gray;
+        font-size: .85rem;
+        transform-origin: 0 0;
+        transition: transform 0.2s ease-in;
+    }
+
+    .login-input {
+        height: 2.8rem;
         width: 100%;
-        font-size: 11px;
-        border: solid 1px #8c8c8c;
-        margin-top: 5px;
-        color: #8c8c8c;
+        font-size: 15px;
+        // border: solid 1px #8c8c8c;
+        margin-bottom: 15px;
+        background: #333;
         border-radius: 4px;
-        transition: font .1s;
+        text-indent: 0.8rem;
+        color: white;
+        // transition: font .1s;
     }
 
     input::-webkit-input-placeholder {
-        font-size: 11px;
+        font-size: 0.9rem;
         // line-height: 2;
     }
     .submit {
-        margin-top: 15px;
-        width: 280px;
+        margin-top: 1.5rem;
+        width: 100%;
         padding: 0.8rem 1.3rem;
         font-weight: bold;
         border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+    .login-question {
+        margin-top: 2rem;
+        color: #737373;
+        font-size: 0.9rem;
     }
 }
 
+
+// .login-background{
+//         background: image_url("netflix_background.jpg") no-repeat center center/cover;
+//         height: 100vh;
+//         z-index: 0;
+
+//         .login-background__gradient {
+//             position: relative;
+//             height: 100vh;
+//             background: rgba(0,0,0,0.6);
+//             z-index: 1;
+//         }
+
+//     }
+    
+//     .login-form-container {
+//         position: relative;
+//         height: 100vh;
+//         color: black;
+//         margin: 0 auto -236px;
+//         padding: 0 5%;
+//         max-width: 550px;
+//         z-index: 2;
+//         border-radius: 4px;
+//         // background-color: transparent;
+//     }
+
+//     .login-form-input-container {
+//         // position: relative;
+//         // z-index: 2;
+//         min-height: 500px;
+//         padding: 60px 68px 40px;
+//         // margin-top: 90px;
+//         margin-bottom: 90px;
+//         background-color: rgba(0, 0, 0, 0.75);
+//         border-radius: 4px;
+//         display: flex;
+//         flex-direction: column;
+//         width: 100%;
+//     }
+
+//     .login-form {
+//         width: 100%;
+//     }
+
+//     .login-form-title {
+//         display: inline-block;
+//         font-size: 21px;
+//         font-weight: 550;
+//         margin: 0 0 1em;
+//         line-height: 1.25em;
+//         color: white;
+//     }
+
+//     .input-login-form {
+//         height: 40px;
+//         width: 100%;
+//         font-size: 11px;
+//         border: solid 1px #8c8c8c;
+//         margin-top: 5px;
+//         color: #8c8c8c;
+//         border-radius: 4px;
+//         transition: font .1s;
+//     }
+
+//     input::-webkit-input-placeholder {
+//         font-size: 11px;
+//         // line-height: 2;
+//     }
+//     .submit {
+//         margin-top: 15px;
+//         width: 280px;
+//         padding: 0.8rem 1.3rem;
+//         font-weight: bold;
+//         border-radius: 4px;
+//     }

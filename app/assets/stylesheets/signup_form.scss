@@ -51,12 +51,35 @@
         line-height: 1.85em;
     }
 
-    .input-signup-form {
+    .signup-inputs {
+        position: relative;
+    }
+
+    .signup-input {
         height: 55px;
         width: 400px;
-        font-size: 11px;
+        font-size: 1rem;
         border: solid 1px #8c8c8c;
         margin-top: 5px;
+    }
+
+    .signup-input:focus + label, .signup-input:not(:placeholder-shown) + label {
+        transform: translate(-0.1rem, -0.8rem) scale(0.65);
+        font-weight: bold;
+    }
+
+    .signup-input::placeholder {
+        color: transparent;
+    }
+
+    label {
+        position: absolute;
+        left: 0.8rem;
+        top: 1.5rem;
+        color: gray;
+        font-size: 1rem;
+        transform-origin: 0 0;
+        transition: transform 0.2s ease-in;
     }
 
     input::-webkit-input-placeholder {
