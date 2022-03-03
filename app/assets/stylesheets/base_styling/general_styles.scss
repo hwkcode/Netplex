@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #e50914;
+}
+
+// input:focus,
+// select:focus,
+// textarea:focus,
+// button:focus {
+//     outline: none;
+// }
+
+* {
+    box-sizing: border-box;
+}
+
+input {
+    font-size: 1.25rem;
+    width: 14.5rem;
+    height: 40px;
+    text-indent: 0.5rem;
+    border-radius: 2px;
+    outline: none;
+}
+
+video {
+    outline: none;
+}
+
+input::placeholder {
+    font-size: 0.9rem;
+}
+
+// input::focus
+
+body {
+    // font-family: ''Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;'
+    // Bebas Neue from Google (All Caps)
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+    // display: grid;
+    // background: black;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+.button {
+    // display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.4rem 1.3rem;
+    border: none;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0,0,0, 0.45);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-rounded {
+    border-radius: 5px;
+}
+
+.btn-xl {
+    font-size: 1.7rem;
+    height: 4rem;
+    padding: 1.05rem 2rem;
+    text-align: center;
+}
+
+.btn-large {
+    font-size: 1rem;
+    padding: 0.8rem 1.3rem;
+    text-transform: uppercase;
+}
+
+
+
+// <a href="https://fontmeme.com/netflix-font/"><img src="https://fontmeme.com/permalink/220228/6979450ef301a1cd2b1a7b81e065d206.png" alt="netflix-font" border="0"></a>
+// https://fontmeme.com/netflix-font/
