@@ -1,0 +1,2 @@
+class MaturityRating < ApplicationRecord
+end

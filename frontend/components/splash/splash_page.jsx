@@ -45,7 +45,7 @@ class SplashPage extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="signup-errors" key={`error-${i}`}>
                         {error}
                     </li>
                 ))}

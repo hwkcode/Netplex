@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  runtime: 1
+  tv_and_movie_id: 1
+  season: 1
+
+two:
+  title: MyString
+  description: MyText
+  runtime: 1
+  tv_and_movie_id: 1
+  season: 1
