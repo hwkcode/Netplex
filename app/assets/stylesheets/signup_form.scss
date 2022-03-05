@@ -59,9 +59,9 @@
     .signup-input {
         height: 55px;
         width: 400px;
-        font-size: 1rem;
+        font-size: 1.25rem;
         border: solid 1px #8c8c8c;
-        margin-top: 5px;
+        margin-top: 8px;
     }
 
     .signup-input:focus + label, .signup-input:not(:placeholder-shown) + label {

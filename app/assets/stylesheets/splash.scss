@@ -80,19 +80,39 @@
         line-height: 2.75rem;
     }
 
-    .tile-form {
+    // .tile-form {
+    //     display: flex;
+    //     justify-content: center;
+    //     // position: relative;
+    // }
+
+    .tile-input {
         display: flex;
         justify-content: center;
         // position: relative;
     }
 
-    .tile-input {
+    .input-field{
         position: relative;
     }
 
+    .email-error{
+        font-size: 1rem;
+        position: absolute;
+        color: #FF5607;  
+        font-weight: bold;
+        outline: black;
+        border-radius: 2px;
+        margin-top: 4.5rem;
+        margin-right: 32.75rem;
+    }
+    
     .input-email {
+        position: relative;
         width: 28.5rem;
         height: 4rem;
+        border-width: 0.5px;
+        border-color: black;
     }
 
     .input-email:focus + label, .input-email:not(:placeholder-shown) + label {
@@ -217,4 +237,11 @@
         // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 }
+
+    // .testing {
+    //     font-size: 2.75rem;
+    //     position: absolute;
+    //     color: white;
+    //     z-index: 2;
+    // }
     

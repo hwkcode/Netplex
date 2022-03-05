@@ -14,11 +14,14 @@ class SplashPage extends React.Component {
         this.state = {
             email: '',
             password: '',
+            emailError: '',
             activeAccordion: -1
         };
         this.handleAccordionClick = this.handleAccordionClick.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.validate = this.validate.bind(this);
     }
 
     update(field) {
@@ -40,6 +43,40 @@ class SplashPage extends React.Component {
             }
         };
     }
+
+    validate() {
+        let emailError = '';
+        if (!this.state.email) {
+            emailError = "Email can't be blank";
+        };
+
+        if (emailError) {
+            this.setState({ emailError });
+            return false;
+        }
+
+        return true;
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const isValid = this.validate();
+        if (isValid) {
+            this.props.history.push(`/signup1?email=${this.state.email}`);
+        }
+
+
+
+
+        // if (this.state.email === '') {
+        //     console.log("Why is it not showing");
+        //     // return (<div className="testing1">Email can not be blank</div>);
+        //     this.renderErrors();
+        // } else {
+        //     this.props.history.push(`/signup1?email=${this.state.email}`);
+        // }
+    }
+
 
     renderErrors() {
         return (
@@ -74,18 +111,20 @@ class SplashPage extends React.Component {
                     <div className="tile-subtitle">Watch anywhere. Cancel anytime.</div>
                     <div className="tile-prompt">Ready to watch? Enter your email to create or restart your membership.</div>
                     <div className="tile-form">
-                        <div className="tile-input">
-                            <input type="email"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                placeholder=" "
-                                className="input-email"
-                            />
-                            <label>Email address</label>
-                        </div>
-                        <Link to={`/signup1?email=${this.state.email}`} className="button btn-xl">Get Started ></Link>
+                        <form onSubmit={this.handleSubmit} className="tile-input">
+                            <div className="input-field">
+                                <input type="email"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    placeholder=" "
+                                    className="input-email"
+                                />
+                                <label>Email address</label>
+                            </div>
+                            <div className="email-error">{this.state.emailError}</div>
+                            <button type="submit" className="button btn-xl">Get Started ></button>
+                        </form>
                     </div>
-                    {this.renderErrors()}
                 </div>
 
                 <div className="panel">
