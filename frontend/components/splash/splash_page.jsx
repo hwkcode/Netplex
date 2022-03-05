@@ -64,17 +64,6 @@ class SplashPage extends React.Component {
         if (isValid) {
             this.props.history.push(`/signup1?email=${this.state.email}`);
         }
-
-
-
-
-        // if (this.state.email === '') {
-        //     console.log("Why is it not showing");
-        //     // return (<div className="testing1">Email can not be blank</div>);
-        //     this.renderErrors();
-        // } else {
-        //     this.props.history.push(`/signup1?email=${this.state.email}`);
-        // }
     }
 
 
