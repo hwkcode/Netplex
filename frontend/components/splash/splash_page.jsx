@@ -47,7 +47,7 @@ class SplashPage extends React.Component {
     validate() {
         let emailError = '';
         if (!this.state.email) {
-            emailError = "Email can't be blank";
+            emailError = "Email is required!";
         };
 
         if (emailError) {
