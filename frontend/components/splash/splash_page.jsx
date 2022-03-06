@@ -111,7 +111,7 @@ class SplashPage extends React.Component {
                                 <label>Email address</label>
                             </div>
                             <div className="email-error">{this.state.emailError}</div>
-                            <button type="submit" className="button btn-xl">Get Started ></button>
+                            <button type="submit" className="button btn-xl">Get Started &gt;</button>
                         </form>
                     </div>
                 </div>
