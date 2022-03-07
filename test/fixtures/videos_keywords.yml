@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: videos_keywords
+#
+#  id              :bigint           not null, primary key
+#  keyword_id      :integer          not null
+#  tv_and_movie_id :integer          not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+one:
+  keyword: one
+  tv_and_movie: one
+
+two:
+  keyword: two
+  tv_and_movie: two

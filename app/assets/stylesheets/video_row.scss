@@ -1,0 +1,45 @@
+.video-row {
+    width: 100%;
+    margin-top: 5px;
+
+    .row-title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 50px;
+    }
+
+    .video-container {
+        position: relative;
+
+        .videos {
+            margin-left: 50px;
+            display: flex;
+            width: max-content;
+            margin-top: 15px;
+            transform: translateX(0px);
+            transition: all 1s ease;
+        }
+
+        .arrow {
+            width: 50px;
+            height: 100%;
+            background-color: rgba(16, 15, 15, 0.4);
+            color: white;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+
+            &.left {
+                left: 0;
+            }
+
+            &.right {
+                right: 0;
+            }
+        }
+    }
+}

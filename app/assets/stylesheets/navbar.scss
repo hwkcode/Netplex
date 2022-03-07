@@ -1,0 +1,93 @@
+.navbar {
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 0.75px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    transition-timing-function: ease-in-out;
+    transition: all 0.5s;
+
+    &.scrolled {
+        background-color: #141414;
+    }
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+
+}
+
+.navbar-container__left {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+        margin-right: 20px;
+    }
+}
+
+.navbar-container__right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 18px;
+
+    span:first-of-type {
+        margin-right: 20px;
+    }
+}
+
+.netplex-logo {
+    width: 100px;
+    object-fit: contain;
+    margin-right: 40px;
+}
+
+.icons {
+    width: auto;
+    height: 25px;
+    margin: 0 22px;
+}
+
+.caret {
+    margin-left: 10px;
+}
+
+.profile {
+    .profile-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-options {
+        display: none;
+        background-color: #141414;
+
+        span {
+         padding: 10px;
+        }
+
+    }
+
+    &:hover {
+        .profile-options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 75px;
+        }
+    }
+}
+
+.profile-avatar {
+    width: 30px;
+    object-fit: contain;
+    border-radius: 4px;
+}

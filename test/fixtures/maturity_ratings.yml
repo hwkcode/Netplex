@@ -1,4 +1,12 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: maturity_ratings
+#
+#  id         :bigint           not null, primary key
+#  rating     :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
 one:
   rating: MyString

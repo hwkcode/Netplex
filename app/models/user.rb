@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
 
     attr_reader :password
@@ -5,10 +16,14 @@ class User < ApplicationRecord
     validates :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
     validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-    # https://api.rubyonrails.org/classes/ActiveModel/Validations/ClassMethods.html#method-i-validates
     validates :password, length: { minimum: 6 }, allow_nil: true
     
     after_initialize :ensure_session_token
+
+    has_many :profiles,
+        foreign_key: :user_id,
+        class_name: :Profile,
+        dependent: :destroy
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

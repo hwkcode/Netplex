@@ -227,6 +227,7 @@
     .faq-answer {
         height: 0;
         overflow: hidden;
+        transition: all 0.4s;
         
         // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
@@ -235,6 +236,7 @@
         margin-top: 1.5rem;
         line-height: 1.75rem;
         height: fit-content;
+
         // border-top: 10px solid black;
         // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
