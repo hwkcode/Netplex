@@ -6,9 +6,10 @@ const mapStateToProps = (state, ownProps) => ({
     userId: state.session.id,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    logout: () => dispatch(logout())
-});
+const mapDispatchToProps = (dispatch) => {
+    // debugger
+    return {logout: () => dispatch(logout())}
+};
 
 const NavBarContainer = connect(mapStateToProps, mapDispatchToProps)(NavBar);
 export default NavBarContainer;

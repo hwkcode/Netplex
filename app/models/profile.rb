@@ -3,8 +3,8 @@
 # Table name: profiles
 #
 #  id         :bigint           not null, primary key
-#  user_id    :integer          not null
 #  name       :string           not null
+#  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -16,6 +16,33 @@ class Profile < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    has_one :my_list, dependent: :destroy
+    has_many :list_items,
+        primary_key: :id, 
+        foreign_key: :profile_id,
+        class_name: :List
 
+    has_many :videos,
+        through: :lists,
+        source: :video
+    
+
+    def self.find_active_profile(user_id)
+        profile = Profile.find_by(active: true,user_id: user_id)
+    
+        if profile
+            return profile
+        else
+            nil
+        end
+    end
+
+    def activate!
+        self.active = true
+        self.save!
+    end
+
+    def deactivate!
+        self.active = false
+        self.save!
+    end
 end

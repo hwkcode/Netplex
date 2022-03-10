@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_160757) do
+ActiveRecord::Schema.define(version: 2022_03_07_225509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,27 +36,6 @@ ActiveRecord::Schema.define(version: 2022_03_07_160757) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "cast_and_crews", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "role", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_cast_and_crews_on_name"
-    t.index ["role"], name: "index_cast_and_crews_on_role"
-  end
-
-  create_table "episodes", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "description", null: false
-    t.integer "runtime", null: false
-    t.integer "tv_and_movie_id", null: false
-    t.integer "season", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["title"], name: "index_episodes_on_title"
-    t.index ["tv_and_movie_id"], name: "index_episodes_on_tv_and_movie_id"
-  end
-
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -64,50 +43,28 @@ ActiveRecord::Schema.define(version: 2022_03_07_160757) do
     t.index ["name"], name: "index_genres_on_name"
   end
 
-  create_table "keywords", force: :cascade do |t|
-    t.string "keyword", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["keyword"], name: "index_keywords_on_keyword"
-  end
-
-  create_table "maturity_ratings", force: :cascade do |t|
-    t.string "rating", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["rating"], name: "index_maturity_ratings_on_rating"
-  end
-
-  create_table "my_lists", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.integer "profile_id", null: false
-    t.integer "tv_and_movie_id", null: false
+    t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_my_lists_on_profile_id"
-    t.index ["tv_and_movie_id"], name: "index_my_lists_on_tv_and_movie_id"
+    t.index ["profile_id"], name: "index_lists_on_profile_id"
+    t.index ["video_id"], name: "index_lists_on_video_id"
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "name", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "tv_and_movies", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "year", null: false
-    t.text "description", null: false
-    t.string "type", null: false
-    t.integer "season"
-    t.integer "runtime"
-    t.integer "maturity_rating_id"
+  create_table "ratings", force: :cascade do |t|
+    t.string "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["maturity_rating_id"], name: "index_tv_and_movies_on_maturity_rating_id"
-    t.index ["title"], name: "index_tv_and_movies_on_title"
-    t.index ["type"], name: "index_tv_and_movies_on_type"
+    t.index ["rating"], name: "index_ratings_on_rating"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,31 +77,28 @@ ActiveRecord::Schema.define(version: 2022_03_07_160757) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
-  create_table "videos_companies", force: :cascade do |t|
-    t.integer "cast_and_crew_id", null: false
-    t.integer "tv_and_movie_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cast_and_crew_id"], name: "index_videos_companies_on_cast_and_crew_id"
-    t.index ["tv_and_movie_id"], name: "index_videos_companies_on_tv_and_movie_id"
-  end
-
-  create_table "videos_genres", force: :cascade do |t|
+  create_table "videogenres", force: :cascade do |t|
     t.integer "genre_id", null: false
-    t.integer "tv_and_movie_id", null: false
+    t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_videos_genres_on_genre_id"
-    t.index ["tv_and_movie_id"], name: "index_videos_genres_on_tv_and_movie_id"
+    t.index ["genre_id"], name: "index_videogenres_on_genre_id"
+    t.index ["video_id"], name: "index_videogenres_on_video_id"
   end
 
-  create_table "videos_keywords", force: :cascade do |t|
-    t.integer "keyword_id", null: false
-    t.integer "tv_and_movie_id", null: false
+  create_table "videos", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "year", null: false
+    t.text "description", null: false
+    t.string "category", null: false
+    t.integer "season"
+    t.integer "runtime"
+    t.integer "rating_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["keyword_id"], name: "index_videos_keywords_on_keyword_id"
-    t.index ["tv_and_movie_id"], name: "index_videos_keywords_on_tv_and_movie_id"
+    t.index ["category"], name: "index_videos_on_category"
+    t.index ["rating_id"], name: "index_videos_on_rating_id"
+    t.index ["title"], name: "index_videos_on_title"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

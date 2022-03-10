@@ -9,7 +9,7 @@
 #
 class Genre < ApplicationRecord
     
-    has_many :videos_genres
-    has_many :tv_and_movies, through: :videos_genres
+    has_many :videogenres
+    has_many :videos, through: :videogenres
 
 end

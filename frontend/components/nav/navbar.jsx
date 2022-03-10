@@ -28,6 +28,7 @@ class NavBar extends React.Component {
     // }
 
     endSession() {
+        // debugger
         this.props.logout();
     }
 

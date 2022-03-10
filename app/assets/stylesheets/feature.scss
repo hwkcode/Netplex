@@ -1,45 +1,70 @@
-.feature-video {
-    height: 90vh;
-    position: relative;
+.video-container {
 
-    .poster {
-        height: 100%;
-        width: 100%;
-        object-fit: fill;
+    .video-gradient {
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.2) 90%,
+            rgba(0, 0, 0, 0.3) 100%,
+            );
+        z-index: 0;
+        height: 80vh;
+
+        video {
+            z-index: -1;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
-    .video-info {
-        width: 35%;
+    .mute-volume {
         position: absolute;
-        left: 60px;
-        bottom: 100px;
+        font-size: 2rem;
+        top: 30vw;
+        right: 7vw;
+        z-index: 1;
+        cursor: pointer;
         color: white;
-        display: flex;
-        flex-direction: column;
+        
+        .icon:hover {
+            color: #d3d3d3;
+        }
+    }
+
+    .videoDetailsContainer{
+        color: #fff;
+        font-weight: 400;
+        line-height: normal;
+        max-width: 35vw;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 16vw;
+        left: 3.5vw;
 
         .title {
             font-size: 3.5rem;
+            margin-bottom: 15px;
             font-weight: bold;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         .description {
-            margin: 20px 0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            line-height: 1.75rem;
+            text-shadow: 2px 2px 4px #000000;
         }
 
         .buttons {
             display: flex;
+            flex-direction: row;
+            margin-top: 2rem;
 
-            .icon {
-                font-size: 2rem;
-                margin-right: 8px;
-            }
-
-            .button-play {
+            .play-button {
                 background-color: white;
                 color: black;
-                padding: 10px 25px;
-                font-size: 1.1rem;
+                padding: 5px 25px;
+                font-size: 1.2rem;
                 font-weight: bold;
                 display: flex;
                 align-items: center;
@@ -47,9 +72,17 @@
                 border: none;
                 margin-right: 20px;
 
+                .icon {
+                    font-size: 2rem;
+                }
             }
 
-            .button-more-info {
+            .play-button:hover {
+                background-color: rgba(255, 255, 255, .7);
+            }
+
+            .list-button {
+                cursor: pointer;
                 background-color: rgba(105,105,105,0.5);
                 color: white;
                 padding: 10px 10px;
@@ -61,10 +94,19 @@
                 border-radius: 4px;
                 border: none;
                 width: 175px;
-
-                .info {
-                    color: white;
+           
+                .plusOrMinus {
+                    width: 1.5vw;
                 }
+
+                .buttonText {        
+                    float: right;
+                    margin: .3vw 0 0 0;
+                }
+            }
+
+            .list-button:hover {
+                background: rgba(80, 80, 80, 0.7);
             }
         }
     }

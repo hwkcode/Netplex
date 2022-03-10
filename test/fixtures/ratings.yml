@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: ratings
+#
+#  id         :bigint           not null, primary key
+#  rating     :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  rating: MyString
+
+two:
+  rating: MyString
