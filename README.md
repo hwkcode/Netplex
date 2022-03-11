@@ -1,24 +1,14 @@
-# README
+# Netplex
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Background
+Netplex is a picture perfect clone of the video-streaming platform, Netflix.  
 
-Things you may want to cover:
+## Technologies, Libraries, APIs
+This project implements the following technologies:
+  - Database: PostgreSQL
+  - Backend: Rails
+  - Frontend: React-Redux
+  - Hosting: Heroku
+  - Storage: AWS S3
+  - Languages: Ruby, Javascript, CSS, HTML
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
