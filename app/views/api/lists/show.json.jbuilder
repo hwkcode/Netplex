@@ -1,1 +1,1 @@
-json.extract! @list, :video_id, :profile_id
+json.partial! 'api/videos/video', video: @video

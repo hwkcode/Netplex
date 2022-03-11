@@ -7,7 +7,6 @@ const genresReducer = (state = {}, action) => {
         case RECEIVE_GENRES:
             return action.genres;
         case RECEIVE_ALL_VIDEOS:
-            // debugger
             return Object.assign({}, action.payload.genres);
         default:
             return state;

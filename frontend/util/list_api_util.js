@@ -1,21 +1,20 @@
-export const fetchLists = userId => (
+export const fetchMyList = () => (
     $.ajax({
         url: '/api/lists'
     })
 );
 
-export const addToList = list => (
+export const addToList = video_id => (
     $.ajax({
         method: 'POST',
-        url: `api/lists`,
-        data: { list }
+        url: 'api/lists',
+        data: { video_id }
     })
 );
 
-export const removeFromList = list => (
+export const removeFromList = video_id => (
     $.ajax({
         method: 'DELETE',
-        url: `api/lists/${videoId}`,
-        data: { list }
+        url: `api/lists/${video_id}`,
     })
 );

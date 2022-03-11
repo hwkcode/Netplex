@@ -1,36 +1,36 @@
 import * as ListAPIUtil from '../util/list_api_util';
 
-export const RECEIVE_LISTS = "RECEIVE_LISTS";
-export const RECEIVE_LIST = "RECEIVE_LIST";
-export const REMOVE_LIST_VIDEO = "REMOVE_LIST_VIDEO";
+export const RECEIVE_MY_VIDEOS = "RECEIVE_MY_VIDEOS";
+export const RECEIVE_MY_VIDEO = "RECEIVE_MY_VIDEO";
+export const REMOVE_MY_VIDEO = "REMOVE_MY_VIDEO";
 
 
-const receiveLists = lists => ({
-    type: RECEIVE_LISTS,
-    lists
+const receiveMyVideos = videos => ({
+    type: RECEIVE_MY_VIDEOS,
+    videos
 });
 
-const receiveList = list => ({
-    type: RECEIVE_LIST,
-    list
-});
+const receiveMyVideo = (video) => ({
+    type: RECEIVE_MY_VIDEO,
+    video
+})
 
-const removeListVideo = videoId => ({
-    type: REMOVE_LIST_VIDEO,
-    videoId
-});
+const removeMyVideo = (video) => ({
+    type: REMOVE_MY_VIDEO,
+    video
+})
 
-export const fetchLists = () => dispatch => (
-    ListAPIUtil.fetchLists()
-        .then(lists => dispatch(receiveLists(lists)))
+export const fetchMyList = () => dispatch => (
+    ListAPIUtil.fetchMyList()
+        .then(videos => dispatch(receiveMyVideos(videos)))
 );
 
-export const addToList = list => dispatch => (
-    ListAPIUtil.addToList(list)
-        .then(list => dispatch(receiveList(list)))
+export const addToList = video => dispatch => (
+    ListAPIUtil.addToList(video.id)
+        .then(video => dispatch(receiveMyVideo(video)))
 );
 
-export const removeFromList = list => dispatch => (
-    ListAPIUtil.removeFromList(list)
-        .then(() => dispatch(removeListVideo(list.video_id)))
+export const removeFromList = video => dispatch => (
+    ListAPIUtil.removeFromList(video.id)
+        .then(() => dispatch(removeMyVideo(video)))
 );

@@ -1,97 +1,83 @@
-.videoSlideContainer {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    // added below for testing
-    // height: fit-content;
+.videoItem {
+  width: 225px;
+  height: 120px;
+  background-color: #0b0b0b;
+  margin-right: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
 
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    .carouselVideo {
-        width: 16vw;
-        transition: .1s;
-        z-index: 1;
-        padding: 0 .5vw 0 .5vw;
-        border-radius: 10px;
+  video {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+    width: 325px;
+    height: 300px;
+    position: absolute;
+    top: -50px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07);
+    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.07);
+    border-radius: 5px;
+
+    img {
+      height: 140px;
     }
 
-    .muteButton {
-        position: absolute;
-        top: 4vw;
-        right: 2vw;
-        z-index: 3;
-        visibility: hidden;
+    .itemInfo {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
 
-        i {
-            text-shadow: 2px 2px 4px rgb(0, 0, 0);
+      .icons {
+        display: flex;
+        margin-bottom: 10px;
+        align-items: left;
 
-            &:hover {
-                color: rgb(85, 84, 84)
-            }
+        .icon {
+          border: 2px solid white;
+          padding: 5px;
+          border-radius: 50%;
+          margin-right: 10px;
+          font-size: 1.75rem;
+          align-items: left;
         }
-    }
+      }
+      .itemInfoTop {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: gray;
 
-    .videoDropDown {
-        background: rgb(19, 19, 19);
-        width: 19vw;
-        max-height: 0;
-        height: 9vw;
-        visibility: hidden;
-        transition: .5s;
-        z-index: -1;
-        overflow: hidden;
-        margin: 0;
-        //added below for testing:
-        // position: absolute;
-        // top: 100%;
-
-
-        .buttonWrapper {
-            display: flex;
-            flex-direction: row;
-            // justify-content: center;
-
-            i {
-                margin: .5vw 0 0 .5vw;
-                font-size: 2.5vw;
-                color: rgb(196, 195, 195);
-
-                &:hover {
-                    color: rgb(255, 255, 255);
-                }
-            }
-
-            h4 {
-                margin: 1vw 0 0 .5vw;
-                font-size: 1.3vw;
-            }
+        .limit {
+          border: 1px solid gray;
+          padding: 1px 3px;
+          margin: 0 10px;
         }
+      }
 
-        p {
-            font-size: 1vw;
-            font-weight: 400;
-            color: rgb(229, 226, 226);
-        }
+      .desc {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+      }
+
+      .genre {
+        font-size: 14px;
+        color: lightgray;
+      }
     }
-
-}
-
-.videoSlideContainer:hover {
-    z-index: 3;
-
-    .carouselVideo {
-        width: 19vw;
-        z-index: 3;
-    }
-
-    .muteButton {
-        visibility: visible;
-    }
-
-    .videoDropDown {
-        visibility: visible;
-        height: 9vw;
-        max-height: 9vw;
-        z-index: 3;
-    }
+  }
 }

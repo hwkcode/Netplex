@@ -4,16 +4,16 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { IoPlaySharp, IoInformationCircleOutline } from "react-icons/io5";
 
 class Feature extends React.Component {
-    debugger;
+    // debugger;
     constructor(props) {
         super(props);
         // this.state = {
         //     muted: true
         // };
-        // this.toggleMute = this.toggleMute.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
     }
 
-    const[muted, setMuted] = useState(true);
+    // const[muted, setMuted] = useState(true);
 
     // debugger
     //     function addOrRemoveFromList(e) {
@@ -32,17 +32,26 @@ class Feature extends React.Component {
     //     }
     // }
 
-    toggleMute() {
+    toggleMute = () => {
+        // debugger
         const featureVideo = document.getElementById("featureVideo");
-
-        if (this.state.muted) {
-            featureVideo.muted = false;
-            this.setState({ muted: false });
+        console.log(featureVideo.muted);
+        if (featureVideo.muted) {
+            featureVideo.muted = !featureVideo.muted;
         } else {
-            featureVideo.muted = true;
-            this.setState({ muted: true });
+            featureVideo.muted = !featureVideo.muted;
         }
-    }
+
+        // let muted = this.state.muted;
+        // if (muted) {
+        //     featureVideo.muted = false;
+        //     // this.setState({ muted: false });
+        // } else {
+        //     featureVideo.muted = true;
+        //     // this.setState({ muted: true });
+        // }
+        // this.setState({ muted: !muted })
+    };
 
     componentDidMount() {
         this.props.fetchAllVideos();
@@ -54,15 +63,20 @@ class Feature extends React.Component {
     }
 
     render() {
+        // debugger
         // const randVideo = (this.props.allVideosArray[0]).map(video => video.id);
         // let randVideo = this.props.allVideosArray[0][1];
         // const randVideo = this.props.allVideosArray;
         // debugger;
+        // const randVideo = this.props.allVideosArray[Math.floor(Math.random() * (this.props.allVideosArray.length))];
+        const randVideo = this.props.allVideosArray[0];
         if (this.props.allVideosArray.length === 0) {
             // console.log(this.props);
             return null;
         }
-        const randVideo = this.props.allVideosArray[Math.floor(Math.random() * (this.props.allVideosArray.length))];
+        // let randNumber = Math.floor(Math.random() * (this.props.allVideosArray.length));
+        // let randVideo = this.props.allVideosArray[randNumber];
+        // debugger
         return (
             <div className="video-container">
                 <div className="video-gradient">
@@ -70,7 +84,7 @@ class Feature extends React.Component {
                         <source src={randVideo.video} />
                     </video>
                 </div>
-                <div onClick={toggleMute} className="mute-volume">{(this.state.muted) ? <FaVolumeMute className="icon" /> : <FaVolumeUp className="icon" />}</div>
+                <div onClick={this.toggleMute} className="mute-volume">{(randVideo.muted) ? <FaVolumeMute className="icon" /> : <FaVolumeUp className="icon" />}</div>
                 <div className="videoDetailsContainer">
                     <div className="title">{randVideo.title}</div>
                     <div className="description">{randVideo.description}</div>
@@ -82,6 +96,7 @@ class Feature extends React.Component {
                             </div> */}
                     </div>
                 </div>
+                <div className="fade-bottom"></div>
             </div>
         );
     }

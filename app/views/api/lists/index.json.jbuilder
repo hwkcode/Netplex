@@ -1,7 +1,5 @@
-arr = [];
-
-@lists.each do |list|
-    arr.push(list.video_id);
+@videos.each do |video|
+  json.set! video.id do
+    json.partial! 'api/videos/video', video: video
+  end
 end
-
-json.video_ids arr

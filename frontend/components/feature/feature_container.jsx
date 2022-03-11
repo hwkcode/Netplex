@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchAllVideos } from '../../actions/video_actions';
 import Feature from "./feature";
 // import { fetchAllGenres } from '../../actions/genre_actions';
-import { fetchLists, addToList, removeFromList } from '../../actions/list_actions';
+import { fetchMyList, addToList, removeFromList } from '../../actions/list_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchAllVideos: () => dispatch(fetchAllVideos()),
         // fetchVideo: (video_id) => dispatch(fetchVideo(video_id)),
         // fetchAllGenres: () => dispatch(fetchAllGenres()),
-        fetchLists: () => dispatch(fetchLists()),
+        fetchMyList: () => dispatch(fetchMyList()),
         addToList: (videoId) => dispatch(addToList(videoId)),
         removeFromList: (videoId) => dispatch(removeFromList(videoId)),
     };
