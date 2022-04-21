@@ -1,16 +1,29 @@
 .watch {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
   .back {
     display: flex;
+    flex-direction: row;
     align-items: center;
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 10px;
-    color: white;
+    color: #e5e5e5;
     cursor: pointer;
     z-index: 2;
+    font-size: 1.25rem;
+    width: 200px;
+
+    .back-arrow {
+      width: 100px;
+      height: auto;
+    }
+
+    .back-arrow:hover {
+      color: white;
+    }
   }
 
   .video {

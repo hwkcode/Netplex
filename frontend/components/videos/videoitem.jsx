@@ -1,21 +1,24 @@
 import React from "react";
 // import { withRouter } from "react-router";
 import { Link } from 'react-router-dom';
-import { IoPlayCircleOutline, IoAddCircleOutline, IoRemoveCircleOutline } from "react-icons/io5";
+import { IoAddCircleOutline, IoCheckmarkCircleOutline, IoPlayCircleSharp, IoThumbsUpOutline, IoThumbsUpSharp, IoThumbsDownOutline, IoThumbsDownSharp } from "react-icons/io5";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 class VideoItem extends React.Component {
     constructor(props) {
-        // debugger
+        // debugger;
         super(props);
         this.state = {
             hover: false,
-            // inList: Object.keys(props.myVideos).includes(String(props.video.id))
+            click: false,
+            inList: Object.keys(props.myVideos).includes(String(props.video.id))
         };
         this._handleMouseEnter = this._handleMouseEnter.bind(this);
         this._handleMouseLeave = this._handleMouseLeave.bind(this);
         this._handleClick = this._handleClick.bind(this);
         this._addToList = this._addToList.bind(this);
         this._removeFromList = this._removeFromList.bind(this);
+        this.toggleClick = this.toggleClick.bind(this);
     }
 
 
@@ -28,7 +31,7 @@ class VideoItem extends React.Component {
 
     _handleClick(e) {
         e.preventDefault();
-        debugger
+        debugger;
         this.props.history.push(`/videos/${this.props.video.id}`);
     }
 
@@ -42,102 +45,63 @@ class VideoItem extends React.Component {
         this.props.removeFromList(this.props.video);
     }
 
+    toggleClick() {
+        this.setState({ click: !this.state.click });
+    }
+
     render() {
         if (!this.props.video) { return null; }
 
-        const play = <IoPlayCircleOutline />;
-        const add = <IoAddCircleOutline />;
-        const remove = <IoRemoveCircleOutline />;
-
         const myListButton = this.state.inList ? (
-            <IoRemoveCircleOutline
-                className={'list-btn'}
+            <IoCheckmarkCircleOutline
+                className='list-button'
                 onClick={this._removeFromList}
             />
-
-            // <img
-            //     className={'list-btn'}
-            //     onClick={this._removeFromList}
-            //     src={remove}
-            //     alt='Remove from My List' />
         ) : (
             <IoAddCircleOutline
-                className={'list-btn'}
+                className='list-button'
                 onClick={this._addToList}
             />
-
-            // <img
-            //     className={'list-btn'}
-            //     onClick={this._addToList}
-            //     src={add} />
         );
 
-
-        // const item = this.state.hover ? (
-        //     <div className='videos-container'>
-        //         <video
-        //             src={this.props.video.video}
-        //             autoPlay
-        //             muted
-        //             // playing={this.state.hover}
-        //             className='video-item'
-        //             width='100%'
-        //             height='100%'
-        //             onEnded={this.handleMouseLeave}
-        //             onClick={this._handleClick}
-        //         />
-        //         <div className='modal-btns'>
-        //             <img className='list-btn' onClick={this._handleClick} src={play} />
-        //             {myListButton}
-        //         </div>
-        //         <p
-        //             className='video-description'
-        //         >{this.props.video.description.slice(0, 150) + '...'}</p>
-        //     </div>
-        // ) : (
-        //     <img
-        //         src={this.props.video.thumbnail}
-        //         className='video-thumbnail' />
-        // );
+        const like = this.state.click ? <IoThumbsUpOutline className="thumbs" onClick={this.toggleClick} /> : <IoThumbsUpSharp className="thumbs" onClick={this.toggleClick}/>;
+        const dislike = this.state.click ? <IoThumbsDownSharp className="thumbs" onClick={this.toggleClick} /> : <IoThumbsDownOutline className="thumbs" onClick={this.toggleClick}/>;
 
         return (
-            <div
-                className='show-container'
-                // style={{ left: this.state.hover && this.props.index * 225 - 50 + this.props.index * 2.5 }}
-                onMouseEnter={this._handleMouseEnter}
-                onMouseLeave={this._handleMouseLeave}
-            >
-                <img
-                    src={this.props.video.thumbnail}
-                />
-                {this.state.hover && (
+            <div className='show-container' onMouseEnter={this._handleMouseEnter} onMouseLeave={this._handleMouseLeave}>
+                {this.state.hover ? (
                     <>
                         <video
                             src={this.props.video.video}
                             autoPlay
                             muted
-                            // playing={this.state.hover}
-                            // className='video-item'
-                            // width='100%'
-                            // height='100%'
                             onEnded={this.handleMouseLeave}
                             onClick={this._handleClick}
                         />
                         <div className="video-info">
-                            <div className='modal-btns'>
-                                <Link to={`/videos/${this.props.video.id}`}>
-                                    <IoPlayCircleOutline
-                                        className='list-btn'
+                            <div className='modal-buttons'>
+                                <div className="play-buttons">
+                                    <Link to={`/videos/${this.props.video.id}`}>
+                                        <IoPlayCircleSharp
+                                            className='play-button'
                                         // onClick={this._handleClick}
-                                    />
-                                </Link>
-                                {myListButton}
+                                        />
+                                    </Link>
+                                    {myListButton}
+                                    {like}
+                                    {dislike}
+                                </div>
+                                {/* <IoIosArrowDropdown className="dropdown-button" /> */}
                             </div>
                             <p className='video-description'>
                                 {this.props.video.description.slice(0, 150) + '...'}
                             </p>
                         </div>
                     </>
+                ) : (
+                    <img
+                        src={this.props.video.thumbnail}
+                    />
                 )}
             </div>
         );

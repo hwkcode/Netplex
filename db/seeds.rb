@@ -110,10 +110,6 @@ looper = Video.create!(title: "Looper", year: 2012, description: "In 2044, a hir
 looper.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/looper.mp4"), filename: 'looper.mp4')
 looper.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/looper.png"), filename: "looper.png")
 
-madea = Video.create!(title: "A Madea Homecoming", year: 2022, description: "Madea's back - hallelujer! And she's not putting up with any nonsense as family drama erupts at her great-grandson's college graduation celebration.", category: "movie", runtime: 107, rating_id: tvma.id)
-madea.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/madea.mp4"), filename: 'madea.mp4')
-madea.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/madea.png"), filename: "madea.png")
-
 oldguard = Video.create!(title: "The Old Guard", year: 2020, description: "Four undying warriors who've secretly protected humanity for centuries become targeted for their mysterious powers just as they discover a new immortal.", category: "movie", runtime: 125, rating_id: r.id)
 oldguard.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/oldguard.mp4"), filename: 'oldguard.mp4')
 oldguard.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/oldguard.png"), filename: "oldguard.png")
@@ -138,6 +134,30 @@ silverlinings = Video.create!(title: "Silver Linings Playbook", year: 2012, desc
 silverlinings.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/silverlinings.mp4"), filename: 'silverlinings.mp4')
 silverlinings.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/silverlinings.png"), filename: "silverlinings.png")
 
+meatballs = Video.create!(title: "Cloudy with a Chance of Meatballs", year: 2009, description: "Offbeat inventor Flint Lockwood must avert a mouthwatering disaster of gigantic proportions after he creates a machine that makes food fall from the sky.", category: "movie", runtime: 90, rating_id: pg.id)
+meatballs.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/meatballs.mp4"), filename: 'meatballs.mp4')
+meatballs.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/meatballs.png"), filename: "meatballs.png")
+
+justgowithit = Video.create!(title: "Just Go With It", year: 2011, description: "After spending years pretending to be married, an unattached plastic surgeon meets The One - and enlists his assistant to pose as his soon-to-be ex-wife.", category: "movie", runtime: 116, rating_id: pg13.id)
+justgowithit.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/justgowithit.mp4"), filename: 'justgowithit.mp4')
+justgowithit.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/justgowithit.png"), filename: "justgowithit.png")
+
+jamesbond = Video.create!(title: "Casino Royale", year: 2006, description: "Shortly after earning his license to kill, agent James Bond suits up to take down an infamous financier of global terrorism - at the poker table.", category: "movie", runtime: 144, rating_id: pg13.id)
+jamesbond.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/jamesbond.mp4"), filename: 'jamesbond.mp4')
+jamesbond.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/jamesbond.png"), filename: "jamesbond.png")
+
+bourne = Video.create!(title: "The Bourne Ultimatum", year: 2007, description: "Relentlessly hunted by the CIA, renegade assassin Jason Bourne continues his international quest to piece together his past and learn his true identity.", category: "movie", runtime: 115, rating_id: pg13.id)
+bourne.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/bourne.mp4"), filename: 'bourne.mp4')
+bourne.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/bourne.png"), filename: "bourne.png")
+
+fivefeetapart = Video.create!(title: "Five Feet Apart", year: 2019, description: "A teen with cystic fibrosis shakes up her daily routine and challenges hospital protocol when she falls for a fellow patient.", category: "movie", runtime: 116, rating_id: pg13.id)
+fivefeetapart.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/fivefeetapart.mp4"), filename: 'fivefeetapart.mp4')
+fivefeetapart.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/fivefeetapart.png"), filename: "fivefeetapart.png")
+
+django = Video.create!(title: "Django Unchained", year: 2012, description: "Accompanied by a German bounty hunter, a freed slave named Django travels across America to free his wife from a sadistic plantation owner.", category: "movie", runtime: 165, rating_id: r.id)
+django.video.attach(io: open("https://netplex-seeds.s3.amazonaws.com/django.mp4"), filename: 'django.mp4')
+django.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/django.png"), filename: "django.png")
+
 # tv shows
 
 queensgambit = Video.create!(title: "The Queen's Gambit", year: 2020, description: "Sent to an orphanage at age 9, Beth develops an uncanny knack for chess - and a growing dependence on the green tranquilizers given to the children.", category: "tvshow", season: 1, rating_id: tvma.id)
@@ -155,6 +175,7 @@ trolls.thumbnail.attach(io: open("https://netplex-seeds.s3.amazonaws.com/trolls.
 # Videogenre
 
 Videogenre.create!(video_id: despicableme2.id, genre_id: comedy.id)
+Videogenre.create!(video_id: despicableme2.id, genre_id: kids.id)
 Videogenre.create!(video_id: hangover.id, genre_id: comedy.id)
 Videogenre.create!(video_id: darkknight.id, genre_id: action.id)
 Videogenre.create!(video_id: queensgambit.id, genre_id: drama.id)
@@ -176,9 +197,8 @@ Videogenre.create!(video_id: haroldandkumar.id, genre_id: comedy.id)
 Videogenre.create!(video_id: kungfupanda.id, genre_id: kids.id)
 Videogenre.create!(video_id: kungfupanda.id, genre_id: comedy.id)
 Videogenre.create!(video_id: lastsamurai.id, genre_id: action.id)
-Videogenre.create!(video_id: lastsamurai.id, genre_id: drama.id)
+Videogenre.create!(video_id: django.id, genre_id: drama.id)
 Videogenre.create!(video_id: looper.id, genre_id: action.id)
-Videogenre.create!(video_id: madea.id, genre_id: comedy.id)
 Videogenre.create!(video_id: oldguard.id, genre_id: action.id)
 Videogenre.create!(video_id: perfectdate.id, genre_id: romance.id)
 Videogenre.create!(video_id: shrek.id, genre_id: kids.id)
@@ -187,6 +207,14 @@ Videogenre.create!(video_id: trolls.id, genre_id: kids.id)
 Videogenre.create!(video_id: vendetta.id, genre_id: action.id)
 Videogenre.create!(video_id: fatherhood.id, genre_id: drama.id)
 Videogenre.create!(video_id: silverlinings.id, genre_id: drama.id)
+# Videogenre.create!(video_id: meatballs.id, genre_id: comedy.id)
+Videogenre.create!(video_id: meatballs.id, genre_id: kids.id)
+Videogenre.create!(video_id: justgowithit.id, genre_id: romance.id)
+Videogenre.create!(video_id: jamesbond.id, genre_id: action.id)
+Videogenre.create!(video_id: jamesbond.id, genre_id: drama.id)
+Videogenre.create!(video_id: bourne.id, genre_id: action.id)
+Videogenre.create!(video_id: bourne.id, genre_id: drama.id)
+Videogenre.create!(video_id: fivefeetapart.id, genre_id: romance.id)
 
 
 # List

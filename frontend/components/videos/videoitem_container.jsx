@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import { removeFromList, addToList } from "../../actions/list_actions";
 import VideoItem from "./videoitem";
 
-const mapStateToProps = (state) => ({
-    // video: ownProps.video,
+const mapStateToProps = (state, ownProps) => ({
+    video: ownProps.video,
     myVideos: state.entities.lists
 });
 

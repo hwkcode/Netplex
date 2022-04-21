@@ -3,10 +3,10 @@ class Api::ListsController < ApplicationController
     def create
         @list = List.new(video_id: params[:video_id])
         @list.profile_id = current_profile.id
-      
+        # debugger
         if @list.save!
             @video = @list.video
-            render :show
+            render :create
         else
             render json: @list.errors.full_messages, status: 422
         end
@@ -19,10 +19,22 @@ class Api::ListsController < ApplicationController
         if @videos
             render :index
         else
-            render json: ["Couldn't find list"]
+            render json: ["No list found"]
         end
     end
   
+    def show
+        profile = Profile.find_by(id: current_profile.id)                      
+        @lists = profile.lists.where(profile_id: current_profile.id).ids        
+        @lists.map! { |id| Video.find_by(id: List.find_by(id: id).video_id)}    
+        
+        if @lists
+            render :show
+        else
+            render json: ["No list found"]
+        end
+    end
+
     def destroy
         list = List.find_by(video_id: params[:id], profile_id: current_profile.id)
         
@@ -32,5 +44,4 @@ class Api::ListsController < ApplicationController
             render json: ['Video is not in list']
         end
     end
-
 end

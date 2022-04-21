@@ -5,6 +5,7 @@ import { fetchAllGenres } from '../../actions/genre_actions';
 import { fetchMyList } from '../../actions/list_actions';
 
 const mapStateToProps = (state) => {
+    // debugger
     return {
         genres: state.entities.genres,
         videos: state.entities.videos,
@@ -16,6 +17,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+    // debugger
     return {
         fetchAllVideos: () => dispatch(fetchAllVideos()),
         // fetchVideo: (video_id) => dispatch(fetchVideo (video_id)),

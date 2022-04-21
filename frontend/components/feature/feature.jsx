@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import { FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 import { IoPlaySharp, IoInformationCircleOutline } from "react-icons/io5";
 
+
+
 class Feature extends React.Component {
     // debugger;
     constructor(props) {
         super(props);
-        // this.state = {
-        //     muted: true
-        // };
+        this.state = {
+            muted: true
+        };
         this.toggleMute = this.toggleMute.bind(this);
     }
 
@@ -33,13 +35,13 @@ class Feature extends React.Component {
     // }
 
     toggleMute = () => {
-        // debugger
         const featureVideo = document.getElementById("featureVideo");
-        console.log(featureVideo.muted);
         if (featureVideo.muted) {
             featureVideo.muted = !featureVideo.muted;
+            this.setState({muted: false})
         } else {
             featureVideo.muted = !featureVideo.muted;
+            this.setState({ muted: true })
         }
 
         // let muted = this.state.muted;
@@ -84,7 +86,7 @@ class Feature extends React.Component {
                         <source src={randVideo.video} />
                     </video>
                 </div>
-                <div onClick={this.toggleMute} className="mute-volume">{(randVideo.muted) ? <FaVolumeMute className="icon" /> : <FaVolumeUp className="icon" />}</div>
+                <div onClick={this.toggleMute} className="mute-volume">{this.state.muted ? <FaVolumeMute className="icon" /> : <FaVolumeUp className="icon" />}</div>
                 <div className="videoDetailsContainer">
                     <div className="title">{randVideo.title}</div>
                     <div className="description">{randVideo.description}</div>

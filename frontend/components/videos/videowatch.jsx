@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { IoArrowBackSharp } from "react-icons/io5";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 class VideoWatch extends React.Component {
 
@@ -19,9 +20,8 @@ class VideoWatch extends React.Component {
         return (
             <div className="watch">
                 <div className="back">
-                    <Link to={"/browse"}>
-                        <IoArrowBackSharp />
-                        &nbsp; Back to browse
+                    <Link to={"/browse"} className="back">
+                        <IoIosArrowRoundBack className="back-arrow"/>
                     </Link>
                 </div>
                 <video
@@ -40,27 +40,3 @@ export default withRouter(VideoWatch);
 
 
 
-
-
-        // export default function VideoWatch() {
-        //     const newLocal = "https://netplex-seeds.s3.amazonaws.com/despicableme2.mp4";
-        //     const trailer = newLocal;
-
-        //     return (
-        //         <div className="watch">
-        //             <div className="back">
-        //                 <Link to={"/browse"}>
-        //                     <IoArrowBackSharp />
-        //                     &nbsp; Back to browse
-        //                 </Link>
-        //             </div>
-        //             <video
-        //                 className="video"
-        //                 autoPlay
-        //                 progress
-        //                 controls
-        //                 src={trailer}
-        //             />
-        //         </div>
-        //     );
-        // }

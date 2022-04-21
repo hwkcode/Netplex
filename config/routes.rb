@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resource :user, only: [:create]
     resources :profiles, only: [:create, :update, :destroy, :index]
     resource :session, only: [:create, :destroy]  
+    resource :profile_session, only: :create
     resources :videos, only: [:index, :show]
     resources :genres, only: [:index, :show]
     resources :lists, only: [:create, :destroy, :index, :show]

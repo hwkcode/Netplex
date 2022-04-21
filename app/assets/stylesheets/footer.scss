@@ -1,0 +1,18 @@
+.footer {
+    background-color: #000;
+    height: 10rem;
+    border-top: 4px solid #222;
+    // color:white;
+
+    .contactLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        .contact-icons {
+            margin: 30px;
+        }
+    }
+}

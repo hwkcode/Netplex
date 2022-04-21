@@ -2,8 +2,8 @@ class Api::VideosController < ApplicationController
 
     def index
         # debugger
-        # @videos = Video.all
-        @videos = Video.includes(:genres)
+        @videos = Video.all
+        # @videos = Video.includes(:genres)
         # debugger
         render :index
     end

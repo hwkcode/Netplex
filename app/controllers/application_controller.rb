@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   
-    helper_method :current_user, :logged_in?, :require_logged_in
-    # skip_before_action :verify_authenticity_token   
+    helper_method :current_user, :logged_in?, :require_logged_in, :current_profile, :profile_set?
     
     def current_user
         return nil unless session[:session_token]
@@ -26,5 +25,31 @@ class ApplicationController < ActionController::Base
     def ensure_logged_in
         render json: ['Invalid Credentials'], status: 401 unless logged_in?
     end
+
+    def current_profile
+        return nil unless current_user
+        @profile = Profile.find_active_profile(current_user.id)
+    
+        if @profile
+            return @profile
+        else
+            return nil
+        end
+    end
+
+    def login_profile!(profile)
+        profile.activate!
+    end
+
+    def logout_profile!(profile)
+        profile.deactivate!
+    end
+
+    def profile_set?
+        if current_profile
+            return true
+        end
+        return false
+  end
 
 end
