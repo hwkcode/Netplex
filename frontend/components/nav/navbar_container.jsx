@@ -5,7 +5,7 @@ import { fetchAllProfiles, activateProfile } from "../../actions/profile_actions
 
 const mapStateToProps = (state) => ({
     userId: state.session.id,
-    // currentProfile: state.session.profile,
+    currentProfile: state.session.profile,
     profiles: state.entities.profiles
 });
 

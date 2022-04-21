@@ -12,6 +12,7 @@ class NavBar extends React.Component {
             scrolling: false
             // sessionprofile: ''
         };
+        debugger
         this.endSession = this.endSession.bind(this);
         this.setProfile = this.setProfile.bind(this);
     }
@@ -33,7 +34,8 @@ class NavBar extends React.Component {
 
     setProfile(profile) {
         return () => {
-            this.props.activateProfile(profile);
+            this.props.activateProfile(profile)
+                // .then(() => window.location.reload());
             // console.log("profile");
             // this.props.history.push('/browse');
             // this.setState({ sessionprofile: this.props.currentProfile });
@@ -42,6 +44,7 @@ class NavBar extends React.Component {
 
 
     render() {
+        debugger
         return (
             <div className={this.state.scrolling ? "navbar scrolled" : "navbar"}>
                 <div className="navbar-container">
@@ -56,6 +59,7 @@ class NavBar extends React.Component {
                     </div>
                     <div className="navbar-container__right">
                         <div className="profile-icons">
+                            <div className="current-profile-name">{this.props.currentProfile === undefined ? '' : `Welcome ${this.props.currentProfile.name}!`}</div>
                             <img src={profileImg} alt="Profile avatar" className="profile-avatar" />
                             <IoCaretDownSharp className="caret" />
                             <ul className="profile-options">
