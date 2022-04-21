@@ -1,0 +1,20 @@
+.my-list-videos {
+    background-color: #0b0b0b;
+    height: 100vh;
+
+    .list-title {
+        position: absolute;
+        margin-top: 90px;
+        margin-left: 60px;
+        font-size: 1.75rem;
+        color: white;
+    }
+
+    .list-videos {
+        display: flex;
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 60px;
+        justify-content: space-between;
+    }
+}

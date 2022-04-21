@@ -3,14 +3,23 @@ import VideoIndexContainer from './videoindex_container';
 
 class VideoIndexes extends React.Component {
     constructor(props) {
+        // debugger
         super(props);
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchAllVideos();
+        this.props.fetchAllGenres();
+    }
+
+    componentWillUnmount() {
+        this.props.fetchAllVideos();
+        this.props.fetchAllGenres();
     }
 
     render() {
+        // debugger
         return (
             <div className='video-indexes-container'>
                 {Object.values(this.props.genres).map(genre => {

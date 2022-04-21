@@ -5,9 +5,10 @@ const genresReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_GENRES:
+            // debugger
             return action.genres;
-        case RECEIVE_ALL_VIDEOS:
-            return Object.assign({}, action.payload.genres);
+        // case RECEIVE_ALL_VIDEOS:
+        //     return Object.assign({}, action.payload.genres);
         default:
             return state;
     }

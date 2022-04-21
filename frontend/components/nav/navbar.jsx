@@ -1,70 +1,82 @@
-import React, { useState } from "react";
+import React from "react";
 import NetplexLogo from '../../../app/assets/images/netplex_logo.png';
-import ProfileAvatarYellow from '../../../app/assets/images/profile-avatar-yellow.png';
-import { IoSearchSharp, IoNotificationsSharp, IoCaretDownSharp, IoCaretUpSharp } from "react-icons/io5";
-// import { FaPen } from "react-icons/fa";
-// import { Link } from "react-router-dom";
+import { IoMdCreate } from "react-icons/io";
+import { IoCaretDownSharp } from "react-icons/io5";
+import profileImg from "../../../app/assets/images/profileImg.png";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             scrolling: false
+            // sessionprofile: ''
         };
         this.endSession = this.endSession.bind(this);
+        this.setProfile = this.setProfile.bind(this);
     }
 
     componentDidMount() {
+        this.props.fetchAllProfiles();
         document.addEventListener('scroll', () => {
             const scrolling = window.scrollY > 100;
             if (scrolling !== this.state.scrolling) {
                 this.setState({ scrolling });
             }
         });
+
     }
 
-    // componentWillUnmount() {
-    //     document.removeEventListener('scroll', this.handleScroll);
-    // }
-
     endSession() {
-        // debugger
         this.props.logout();
     }
 
-    // const[isScrolled, setIsScrolled] = useState(false);
+    setProfile(profile) {
+        return () => {
+            this.props.activateProfile(profile);
+            // console.log("profile");
+            // this.props.history.push('/browse');
+            // this.setState({ sessionprofile: this.props.currentProfile });
+        };
+    }
 
-    // window.onscroll = () => {
-    //     setIsScrolled(window.pageYOffset > 100 ? true : false);
-    //     return () => (window.onscroll = null);
-    // };
 
     render() {
         return (
             <div className={this.state.scrolling ? "navbar scrolled" : "navbar"}>
                 <div className="navbar-container">
                     <div className="navbar-container__left">
-                        <img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" />
-                        <span>Home</span>
-                        <span>TV Shows</span>
-                        <span>Movies</span>
-                        <span>New & Popular</span>
-                        <span>My List</span>
+                        <Link to="/browse"><img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" /></Link>
+                        <Link to="/browse" id="link">Home</Link>
+                        <a target='_blank' href="https://www.linkedin.com/in/jonathankimmbapmp/" id="link">LinkedIn</a>
+                        <a target='_blank' href="https://angel.co/u/jonathan-kim-mba-pmp" id="link">AngelList</a>
+                        <a target='_blank' href="#" id="link">Portfolio</a>
+                        <a target='_blank' href="https://github.com/hwkcode" id="link">Github</a>
+                        <Link to="/mylist" id="link">My List</Link>
                     </div>
                     <div className="navbar-container__right">
-                        <IoSearchSharp className="icons" />
-                        <span>Kids</span>
-                        <span>DVD</span>
-                        <IoNotificationsSharp className="icons" />
-                        <div className="profile">
-                            <div className="profile-icons">
-                                <img src={ProfileAvatarYellow} alt="Profile avatar" className="profile-avatar" />
-                                <IoCaretDownSharp className="caret" />
-                            </div>
-                            <div className="profile-options">
-                                <span>Manage Profiles</span>
-                                <span onClick={this.endSession}>Sign Out of Netplex</span>
-                            </div>
+                        <div className="profile-icons">
+                            <img src={profileImg} alt="Profile avatar" className="profile-avatar" />
+                            <IoCaretDownSharp className="caret" />
+                            <ul className="profile-options">
+                                <div className="shapes">
+                                    <div className='triangle' />
+                                </div>
+                                {Object.values(this.props.profiles).map(profile => {
+                                    return (
+                                        <Link to="/browse" key={profile.id} onClick={this.setProfile(profile)} className="profile-option">
+                                            <img src={profileImg} className="profile-avatar-dropdown" />
+                                            {profile.name}
+                                        </Link>
+                                    );
+                                })}
+                                <div className="manage-profiles-option">
+                                    <IoMdCreate className="manage-profiles-icon" />
+                                    <Link to='/profiles' className="manage-profiles-link">Manage Profiles</Link>
+                                </div>
+
+                                <span onClick={this.endSession} className="sign-out-link">Sign out of Netplex</span>
+                            </ul>
                         </div>
                     </div>
                 </div>

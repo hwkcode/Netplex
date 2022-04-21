@@ -1,0 +1,209 @@
+.manage-profiles {
+    background-color: black;
+    height: 100vh;
+    width: 100wh;
+    color: white;
+}
+
+.profile-netplex-logo {
+    width: 100px;
+    margin-left: 55px;
+    margin-top: 17px;
+}
+
+
+.profiles-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9.5rem;
+    
+    .prompt-title {
+        font-size: 3.3rem;
+        letter-spacing: 1px;
+    }
+
+    .profiles {
+        display: flex;
+        flex-direction: row;
+
+        .profile-item {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .profile-item-pic {
+                border-radius: 4px;
+                height: 150px;
+                width: 150px;
+                margin: 0px 15px;
+            }
+
+            .profile-name {
+                font-size: 1.25rem;
+                color: gray;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .profile-item:hover {
+            .profile-name {
+                color: white;
+            }
+
+            .profile-item-pic {
+                border: 2px solid white;
+            }
+        }
+    }
+
+    
+}
+
+.white-button {
+    padding: 10px 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: gray;
+    background-color: transparent;
+    font-size: 1.1rem;
+}
+
+.white-button:hover {
+    border: 1px solid white;
+    color: white;
+}
+
+.red-button {
+    padding: 10px 30px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+}
+
+.red-button:hover {
+    background-color: red;
+    color: white;
+}
+
+
+
+.add-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -5px;
+
+    .add-profile-text {
+        font-size: 1.25rem;
+        color: gray;
+        margin-top: 1rem;
+    }
+}
+
+.add-profile-container:hover {
+    .add-profile-text {
+        color: white;
+    }
+}
+
+.add-profile-icon {
+    background-image: url("add-profile.JPG");
+    background-size: contain;
+    height: 150px;
+    width: 150px;
+    margin-top: 40px;
+    border-radius: 4px;
+}
+
+.add-profile-icon:hover { 
+    background-image: url("add-profile-hover.JPG");
+}
+
+.add-profile-text:hover {
+    color: white;
+}
+
+.profile-form-input {
+    background-color: black;
+    height: 100vh;
+    width: 100wh;
+    color: white;
+
+    .profile-form-container {
+        // width: 500px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-items: center;
+        position: fixed;
+        top: 25.6%;
+        left: 30.5%;
+        // margin-top: 9.5rem;
+
+        .form-prompt {
+            // margin-right: auto;
+            font-size: 3.75rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .form-prompt-message {
+            // margin-right: auto;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+    
+        .form-input {
+            display: flex;
+            border-top: 1px solid gray;
+            margin-bottom: 25px;
+
+            .profile-pic {
+                margin-top: 20px;
+                height: 125px;
+                width: 125px;
+                border-radius: 4px;
+
+            }
+
+            ::placeholder {
+                color: white;
+                font-size: 1.25rem;
+            }
+
+            .profile-name-input {
+                margin-left: 20px;
+                margin-top: 60px;
+                background: #666;
+                color: white;
+                cursor: text;
+                font-size: 1.25rem;
+                width: 400px;
+            }
+        }
+
+        .manage-profile-buttons {
+            border-top: 1px solid gray;
+    
+            .white-button {
+                margin-left: 20px;
+                padding: 10px 30px;
+            }
+        }
+    }
+    
+}

@@ -3,6 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
     create_table :profiles do |t|
       t.string :name, null: false
       t.integer :user_id, null: false
+      t.boolean :active, default: false
 
       t.timestamps
     end

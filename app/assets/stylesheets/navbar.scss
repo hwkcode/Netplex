@@ -22,76 +22,141 @@
     justify-content: space-between;
     padding: 18px 60px;
 
-}
 
-.navbar-container__left {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 
-    span {
-        margin-right: 20px;
-    }
-}
-
-.navbar-container__right {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 18px;
-
-    span:first-of-type {
-        margin-right: 20px;
-    }
-}
-
-.netplex-logo {
-    width: 100px;
-    object-fit: contain;
-    margin-right: 40px;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    filter: drop-shadow(2px 2px 2px #000);
-
-}
-
-.icons {
-    width: auto;
-    height: 25px;
-    margin: 0 22px;
-}
-
-.caret {
-    margin-left: 10px;
-}
-
-.profile {
-    .profile-icons {
+    .navbar-container__left {
         display: flex;
         align-items: center;
-    }
+        cursor: pointer;
 
-    .profile-options {
-        display: none;
-        background-color: #141414;
+        .netplex-logo {
+            width: 100px;
+            object-fit: contain;
+            margin-right: 40px;
+            text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+            filter: drop-shadow(2px 2px 2px #000);
 
-        span {
-         padding: 10px;
         }
 
+        #link {
+            margin-right: 20px;
+            color: #e5e5e5;
+            // font-weight: bold;
+            font-size: 0.90rem;
+        }
+
+        #link:hover {
+            color: white;
+        }
     }
 
-    &:hover {
-        .profile-options {
+    .icons {
+        width: auto;
+        height: 25px;
+        margin: 0 22px;
+    }
+
+
+
+    .navbar-container__right {
+        position: relative;
+        cursor: pointer;
+        margin-right: 18px;
+
+
+        .profile-icons {
             display: flex;
-            flex-direction: column;
-            position: absolute;
-            right: 75px;
-        }
-    }
-}
+            flex-direction: row;
+            align-items: center;
 
-.profile-avatar {
-    width: 30px;
-    object-fit: contain;
-    border-radius: 4px;
+            .profile-avatar {
+                width: 32px;
+                object-fit: contain;
+                border-radius: 4px;
+            }
+
+            .caret {
+                margin-left: 10px;
+
+            }
+
+            .profile-options {
+                display: none;
+                position: absolute;
+                z-index: 1;
+                background-color: rgba($color: #000000, $alpha: 0.75);
+                flex-direction: column;
+                right: 5px;
+                top: 2.25rem;
+                width: 200px;
+
+                .shapes {
+                    display: flex;
+                    flex-direction: row;
+
+                    .triangle {
+                        z-index: 1;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-bottom: 5px solid white;
+                        width: 0;
+                        height: 0;
+                        margin-top: -6px;
+                        margin-left: 162px;
+                    }
+                }
+
+                .profile-option {
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    .profile-avatar-dropdown {
+                        width: 25px;
+                        margin-right: 10px;
+                        border-radius: 4px;
+                    }
+                }
+
+                .manage-profiles-option {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border-bottom: 0.5px solid #e5e5e5;
+
+                    .manage-profiles-icon {
+                        margin: 12px 10px 20px 20px;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+
+                .sign-out-link {
+                    margin: 20px 20px 20px 35px;
+                }
+
+                & > * {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+
+            &:hover .profile-options {
+                display: flex;
+            }
+
+        }
+
+        &:hover {
+            .caret {
+                transform: rotate(180deg);
+            }
+        }
+
+
+    }
 }

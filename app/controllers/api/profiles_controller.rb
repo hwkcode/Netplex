@@ -2,16 +2,17 @@ class Api::ProfilesController < ApplicationController
     
     def create
         @profile = Profile.new(profile_params)
+        @profile.user_id = current_user.id
         if @profile.save
             render :show
         else   
-            render json: ['Something went wrong'], status: 422
+            render json: ['Unable to create'], status: 422
         end
     end
 
     def update
         @profile = Profile.find(params[:id])
-        if @profile && @profile.update(update_params)
+        if current_user.id == @profile.user_id && @profile.update(update_params)
             render :show
         else
             render json: @profile.errors.full_messages, status: 401
@@ -26,10 +27,13 @@ class Api::ProfilesController < ApplicationController
     end
 
     def index
-        user = User.find(params[:user_id])
-        @profiles = user.profiles
-        render :index
-    end
+        @profiles = Profile.where('user_id = ?', current_user.id)
+        if @profiles
+            render :index
+        else
+            render json: ['No profiles found'], status: 422
+        end
+  end
 
     
     def destroy
@@ -38,7 +42,7 @@ class Api::ProfilesController < ApplicationController
             @profiles = current_user.profiles
             render :index
         else
-            render json: ['Something went wrong'], status: 401
+            render json: ['Unable to delete'], status: 401
         end
      end
     

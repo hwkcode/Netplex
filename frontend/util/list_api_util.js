@@ -1,5 +1,6 @@
-export const fetchMyList = () => (
+export const fetchList = () => (
     $.ajax({
+        method: 'GET',
         url: '/api/lists'
     })
 );
@@ -16,5 +17,12 @@ export const removeFromList = video_id => (
     $.ajax({
         method: 'DELETE',
         url: `api/lists/${video_id}`,
+    })
+);
+
+export const fetchMyList = (profile_id) => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/lists/${profile_id}`
     })
 );

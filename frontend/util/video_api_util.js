@@ -9,3 +9,4 @@ export const fetchVideo = videoId => (
         url: `api/videos/${videoId}`
     })
 );
+

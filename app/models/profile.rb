@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  name       :string           not null
 #  user_id    :integer          not null
+#  active     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -16,7 +17,7 @@ class Profile < ApplicationRecord
         foreign_key: :user_id,
         class_name: :User
 
-    has_many :list_items,
+    has_many :lists,
         primary_key: :id, 
         foreign_key: :profile_id,
         class_name: :List
@@ -27,7 +28,7 @@ class Profile < ApplicationRecord
     
 
     def self.find_active_profile(user_id)
-        profile = Profile.find_by(active: true,user_id: user_id)
+        profile = Profile.find_by(active: true, user_id: user_id)
     
         if profile
             return profile
