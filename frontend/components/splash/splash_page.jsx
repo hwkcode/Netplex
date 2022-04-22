@@ -162,7 +162,7 @@ class SplashPage extends React.Component {
                                 <span>{this.state.activeAccordion === 1 ? <IoCloseOutline /> : <IoAddOutline />}</span>
                             </div>
                             <div className={this.state.activeAccordion === 1 ? "faq-answer show" : "faq-answer"}>
-                                <p>Netplex is a picture-perfect, single page application clone of Netflix, a video-streaming platform.</p>
+                                <p>Netplex is a picture-perfect, single-page application clone of Netflix, a video-streaming platform.</p>
                             </div>
                         </div>
                         <div className="faq">
