@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    // debugger
     logout: () => dispatch(logout()),
     fetchAllProfiles: () => dispatch(fetchAllProfiles()),
     activateProfile: (profile) => dispatch(activateProfile(profile))

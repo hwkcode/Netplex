@@ -2,10 +2,8 @@ import { connect } from "react-redux";
 import VideoIndex from "./videoindex";
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
         videos: state.entities.videos,
-        // genre: ownProps.genre
     }
 };
 

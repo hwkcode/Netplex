@@ -33,22 +33,3 @@ class SignupMessage extends React.Component {
 }
 
 export default SignupMessage;
-
-// <div className="signup-page">
-//     <img src={NetplexLogo} alt="Netplex logo" className="netplex-logo" />
-//     <Link to="/login" className="button sign-in">Sign In</Link>
-//     <div className="signup-container">
-//         <div className="signup-message-container">
-//             <div className="signup-step-container">
-//                 <div className="step-logo-container">
-//                     <div className="step-logo"></div>
-//                 </div>
-//                 <div className="step-indicator">Step <strong>1</strong> of 2</div>     
-//                 <div className="step-title">Finish setting up your account</div>     
-//                 <br />
-//                 <div className="step-message">Netflix is personalized for you. Create a password to watch on any device at any time.</div> {/*font 18*/}
-//             </div>
-//         </div>
-//         <Link to={`/signup?email=${this.state.email}`} type="submit" className="button continue">Continue</Link>
-//     </div>
-// </div>

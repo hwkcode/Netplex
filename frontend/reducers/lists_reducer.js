@@ -1,6 +1,5 @@
 import { RECEIVE_MY_VIDEOS, RECEIVE_MY_VIDEO, REMOVE_MY_VIDEO } from '../actions/list_actions';
 
-
 const listReducer = (state = {}, action) => {
     Object.freeze(state);
     let nextState = Object.assign({}, state);

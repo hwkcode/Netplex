@@ -77,19 +77,17 @@
         height: 2.8rem;
         width: 100%;
         font-size: 15px;
-        // border: solid 1px #8c8c8c;
         margin-bottom: 15px;
         background: #333;
         border-radius: 4px;
         text-indent: 0.8rem;
         color: white;
-        // transition: font .1s;
     }
 
     input::-webkit-input-placeholder {
         font-size: 0.9rem;
-        // line-height: 2;
     }
+
     .submit {
         margin-top: 1.5rem;
         width: 100%;
@@ -105,80 +103,3 @@
         font-size: 0.9rem;
     }
 }
-
-
-// .login-background{
-//         background: image_url("netflix_background.jpg") no-repeat center center/cover;
-//         height: 100vh;
-//         z-index: 0;
-
-//         .login-background__gradient {
-//             position: relative;
-//             height: 100vh;
-//             background: rgba(0,0,0,0.6);
-//             z-index: 1;
-//         }
-
-//     }
-    
-//     .login-form-container {
-//         position: relative;
-//         height: 100vh;
-//         color: black;
-//         margin: 0 auto -236px;
-//         padding: 0 5%;
-//         max-width: 550px;
-//         z-index: 2;
-//         border-radius: 4px;
-//         // background-color: transparent;
-//     }
-
-//     .login-form-input-container {
-//         // position: relative;
-//         // z-index: 2;
-//         min-height: 500px;
-//         padding: 60px 68px 40px;
-//         // margin-top: 90px;
-//         margin-bottom: 90px;
-//         background-color: rgba(0, 0, 0, 0.75);
-//         border-radius: 4px;
-//         display: flex;
-//         flex-direction: column;
-//         width: 100%;
-//     }
-
-//     .login-form {
-//         width: 100%;
-//     }
-
-//     .login-form-title {
-//         display: inline-block;
-//         font-size: 21px;
-//         font-weight: 550;
-//         margin: 0 0 1em;
-//         line-height: 1.25em;
-//         color: white;
-//     }
-
-//     .input-login-form {
-//         height: 40px;
-//         width: 100%;
-//         font-size: 11px;
-//         border: solid 1px #8c8c8c;
-//         margin-top: 5px;
-//         color: #8c8c8c;
-//         border-radius: 4px;
-//         transition: font .1s;
-//     }
-
-//     input::-webkit-input-placeholder {
-//         font-size: 11px;
-//         // line-height: 2;
-//     }
-//     .submit {
-//         margin-top: 15px;
-//         width: 280px;
-//         padding: 0.8rem 1.3rem;
-//         font-weight: bold;
-//         border-radius: 4px;
-//     }

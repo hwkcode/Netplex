@@ -1,6 +1,5 @@
 import { RECEIVE_PROFILE, RECEIVE_PROFILES, REMOVE_PROFILE } from "../actions/profile_actions";
 
-
 const profilesReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);

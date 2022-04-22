@@ -13,7 +13,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
     <div>
-        {/* <h1>Netplex will be legendary!</h1> */}
         <Switch>
             <AuthRoute Route exact path='/' component={SplashContainer} />
             <AuthRoute Route path='/login' component={LoginFormContainer} />

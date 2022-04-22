@@ -22,8 +22,6 @@
     justify-content: space-between;
     padding: 18px 60px;
 
-
-
     .navbar-container__left {
         display: flex;
         align-items: center;
@@ -35,13 +33,11 @@
             margin-right: 40px;
             text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
             filter: drop-shadow(2px 2px 2px #000);
-
         }
 
         #link {
             margin-right: 20px;
             color: #e5e5e5;
-            // font-weight: bold;
             font-size: 0.90rem;
         }
 
@@ -56,13 +52,10 @@
         margin: 0 22px;
     }
 
-
-
     .navbar-container__right {
         position: relative;
         cursor: pointer;
         margin-right: 18px;
-
 
         .profile-icons {
             display: flex;
@@ -81,7 +74,6 @@
 
             .caret {
                 margin-left: 5px;
-
             }
 
             .profile-options {
@@ -160,7 +152,5 @@
                 transform: rotate(180deg);
             }
         }
-
-
     }
 }
