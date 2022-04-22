@@ -67,7 +67,6 @@ class SplashPage extends React.Component {
         }
     }
 
-
     renderErrors() {
         return (
             <ul>
