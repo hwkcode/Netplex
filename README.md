@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-    <h2 align="center">A picture-perfect single-page application clone of Netflix, a video streaming platform.</br></br>
-    Start viewing <a href="https://hwkcode.github.io/CovidShooter/"><strong>here!</strong></a>
+    <h2 align="center">A picture-perfect single-page application clone of Netflix.</br></br>
+    Start viewing <a href="https://netplex-app.herokuapp.com/#/"><strong>here!</strong></a>
     </h2>   
     
 </p>
@@ -32,22 +32,37 @@
 
 <p>
     <h2>Overview</h2>
-    Text here
+    Netplex is a clone of Netflix, a video streaming platform, where signed up users can create profiles, watch videos, and add videos to personalized lists. 
 </p>
 
 <p>
     <h2>Technologies Used</h2>
     <ul>
-        <li>Backend: Rails</li>
-        <li>Frontend: React-Redux</li>
-        <li>Languages: Ruby, Javascript, CSS, HTML</li>
-        <li>Storage: AWS S3</li>
-        <li>Hosting: Heroku</li>
+        <li><b>Backend</b>: Rails</li>
+        <li><b>Frontend</b>: React-Redux</li>
+        <li><b>Languages</b>: Ruby, Javascript, CSS, HTML</li>
+        <li><b>Storage</b>: AWS S3</li>
+        <li><b>Hosting</b>: Heroku</li>
     </ul>
 </p>
 
-## Featured Code Snippets
-
-
-
-
+<p>
+    <h2>Features</h2>
+    <ul>
+        <li><h3>User Authentication</h3></li>
+        Users can sign up, login, and logout, secured by a user authentication policy.
+        <img src="./app/assets/images/userauth.gif" height=400>
+        </br>
+        <li><h3>Manage Profiles</h3></li>
+        Users can create and manage up to 5 profiles.
+        <img src="./app/assets/images/profiles.gif" height=400>
+        </br>
+        <li><h3>Watch Videos</h3></li>
+        Users can preview and watch videos sorted by genre.
+        <img src="./app/assets/images/videos.gif" height=400>
+        </br>
+        <li><h3>My List</h3></li>
+        Users can create a list of videos specific to each profile.
+        <img src="./app/assets/images/list.gif" height=400>    
+    </ul>
+</p>
