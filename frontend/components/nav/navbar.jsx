@@ -10,9 +10,7 @@ class NavBar extends React.Component {
         super(props);
         this.state = {
             scrolling: false
-            // sessionprofile: ''
         };
-        debugger
         this.endSession = this.endSession.bind(this);
         this.setProfile = this.setProfile.bind(this);
     }
@@ -35,16 +33,10 @@ class NavBar extends React.Component {
     setProfile(profile) {
         return () => {
             this.props.activateProfile(profile)
-                // .then(() => window.location.reload());
-            // console.log("profile");
-            // this.props.history.push('/browse');
-            // this.setState({ sessionprofile: this.props.currentProfile });
         };
     }
 
-
     render() {
-        debugger
         return (
             <div className={this.state.scrolling ? "navbar scrolled" : "navbar"}>
                 <div className="navbar-container">
@@ -53,7 +45,7 @@ class NavBar extends React.Component {
                         <Link to="/browse" id="link">Home</Link>
                         <a target='_blank' href="https://www.linkedin.com/in/jonathankimmbapmp/" id="link">LinkedIn</a>
                         <a target='_blank' href="https://angel.co/u/jonathan-kim-mba-pmp" id="link">AngelList</a>
-                        <a target='_blank' href="#" id="link">Portfolio</a>
+                        <a target='_blank' href="https://hwkcode.github.io/" id="link">Portfolio</a>
                         <a target='_blank' href="https://github.com/hwkcode" id="link">Github</a>
                         <Link to="/mylist" id="link">My List</Link>
                     </div>
@@ -78,7 +70,6 @@ class NavBar extends React.Component {
                                     <IoMdCreate className="manage-profiles-icon" />
                                     <Link to='/profiles' className="manage-profiles-link">Manage Profiles</Link>
                                 </div>
-
                                 <span onClick={this.endSession} className="sign-out-link">Sign out of Netplex</span>
                             </ul>
                         </div>

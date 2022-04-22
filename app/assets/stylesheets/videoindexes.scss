@@ -1,14 +1,11 @@
 .video-indexes-container {
-  // position: relative;
   background-color: #0b0b0b;
-  // background-color: #141414;
   margin-top: -1.25rem;
 }
 
 .video-index-container {
   display: flex;
   flex-direction: column;
-  // position: relative;
 
   .video-index-title {
     color: #dddddd;
@@ -27,12 +24,9 @@
 
   .video-index {
     display: flex;
-    //  overflow-x: scroll;    // hidden
     overflow: visible;
-    //  overflow: hidden;
     padding-bottom: 20px;
     padding-top: 0px;
-    //  padding-left: 50px;
     position: relative;
     align-items: center;
 
@@ -82,11 +76,8 @@
 
 }
 
-// BREAK DIVIDE
-
 
 .show-container {
-  // ***
   width: 225px;
   height: 120px;
   background-color: #0b0b0b;
@@ -126,8 +117,6 @@
     box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.25);
     border-radius: 5px;
     z-index: 100;
-    // transition: 2s ease-in-out;
-    // transform: scale(1.5);
 
     img {
       height: 140px;
@@ -160,7 +149,6 @@
           }
 
           .list-button {
-            // color: white;
             color: #d3d3d3;
             font-size: 2.25rem;
             align-items: left;
@@ -171,13 +159,11 @@
           }
 
           .thumbs {
-            // font-size: 1rem;
             height: 28px;
             width: 28px;
             margin: 4px;
             border: 3px solid #d3d3d3;
             border-radius: 50%;
-            // color: white;
             color: #d3d3d3;
           }
 
@@ -189,7 +175,6 @@
 
         .dropdown-button {
           font-size: 2.5rem;
-          // margin-left: 175px;
         }
 
       }

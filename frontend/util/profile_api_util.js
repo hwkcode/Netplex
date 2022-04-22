@@ -21,7 +21,6 @@ export const deleteProfile = (profile) => (
     })
 );
 
-
 export const retrieveProfiles = () => (
     $.ajax({
         method: 'GET',

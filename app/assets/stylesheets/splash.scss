@@ -43,18 +43,15 @@
     .tile__background-image{
         position: relative;
         width: 100%;
-        // margin-top: -1rem;
         height: 94vh;
         filter: brightness(30%);
         z-index: 0;
-        // border-bottom: 8px solid #222;
     }
 
     .tile__text {
         position: absolute;
         width: 100%;
         padding: 35px 0;
-        // margin-top: -48.5%;
         transform: translate(0, -69vh);
         text-align: center;
         z-index: 1;            
@@ -82,16 +79,9 @@
         line-height: 2.75rem;
     }
 
-    // .tile-form {
-    //     display: flex;
-    //     justify-content: center;
-    //     // position: relative;
-    // }
-
     .tile-input {
         display: flex;
         justify-content: center;
-        // position: relative;
     }
 
     .input-field{
@@ -222,31 +212,17 @@
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        // height: 0.01rem;
     }
 
     .faq-answer {
         height: 0;
         overflow: hidden;
         transition: all 0.4s;
-        
-        // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 
     .faq-answer.show {
         margin-top: 1.5rem;
         line-height: 1.75rem;
         height: fit-content;
-
-        // border-top: 10px solid black;
-        // transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 }
-
-    // .testing {
-    //     font-size: 2.75rem;
-    //     position: absolute;
-    //     color: white;
-    //     z-index: 2;
-    // }
-    

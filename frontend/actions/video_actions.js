@@ -14,7 +14,6 @@ const receiveVideo = video => ({
 });
 
 export const fetchAllVideos = () => dispatch => {
-    // debugger
     return VideoAPIUtil.fetchAllVideos()
         .then(payload => dispatch(receiveAllVideos(payload)));
 };

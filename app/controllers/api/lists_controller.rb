@@ -3,7 +3,7 @@ class Api::ListsController < ApplicationController
     def create
         @list = List.new(video_id: params[:video_id])
         @list.profile_id = current_profile.id
-        # debugger
+
         if @list.save!
             @video = @list.video
             render :create

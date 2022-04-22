@@ -1,10 +1,8 @@
 import React from "react";
 import ProfileFormContainer from "./profile_form_container";
-// import { IoAddCircleSharp } from "react-icons/io5";
 import profileImg from "../../../app/assets/images/profileImg.png";
 import editProfileImg from "../../../app/assets/images/editProfileImg.JPG";
 import NetplexLogo from '../../../app/assets/images/netplex_logo.png';
-import addProfileImg from '../../../app/assets/images/add-profile.JPG';
 
 class ProfileIndex extends React.Component {
     constructor(props) {
@@ -22,7 +20,6 @@ class ProfileIndex extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchAllProfiles();
     }
 
@@ -39,7 +36,6 @@ class ProfileIndex extends React.Component {
     }
 
     profileVideos(profile) {
-        // debugger
         if (!this.state.manage) {
             return () => {
                 this.props.activateProfile(profile);
@@ -67,10 +63,8 @@ class ProfileIndex extends React.Component {
         const prompt = this.state.manage ? "Manage Profiles:" : "Who's watching?";
         const buttonInfo = this.state.manage ? "Done" : "Manage Profiles";
 
-        // debugger
         const addProfile = Object.values(this.props.profiles).length < 5 ? (
             <li onClick={this.addNewProfile} className="add-profile-container">
-                {/* <img src={addProfileImg} className="add-profile-icon"/> */}
                 <div className="add-profile-icon"></div>
                 <div className="add-profile-text">Add Profile</div>
             </li>
