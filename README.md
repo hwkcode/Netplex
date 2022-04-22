@@ -66,3 +66,21 @@
         <img src="./app/assets/images/list.gif" height=400>    
     </ul>
 </p>
+
+## Featured Code Snippet
+
+Fetching videos from "My List" for specified profile:
+````
+def show
+    profile = Profile.find_by(id: current_profile.id)                      
+    @lists = profile.lists.where(profile_id: current_profile.id).ids        
+    @lists.map! { |id| Video.find_by(id: List.find_by(id: id).video_id)}    
+        
+    if @lists
+        render :show
+    else
+        render json: ["No list found"]
+    end
+end
+
+
